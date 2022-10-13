@@ -1,0 +1,2 @@
+class SelectedEventsController < ApplicationController
+end
