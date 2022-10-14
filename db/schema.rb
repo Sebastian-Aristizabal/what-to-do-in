@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_13_005122) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_14_160022) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,10 +52,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_13_005122) do
     t.string "title"
     t.string "video_url"
     t.text "details"
-    t.date "start_date"
-    t.date "end_date"
-    t.date "start_hour"
-    t.date "end_hour"
+    t.datetime "start_date", precision: nil
+    t.datetime "end_date", precision: nil
+    t.datetime "start_hour", precision: nil
+    t.datetime "end_hour", precision: nil
     t.string "address"
     t.string "link_web"
     t.string "instagram_link"
@@ -64,6 +64,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_13_005122) do
     t.datetime "updated_at", null: false
     t.bigint "category_id", null: false
     t.bigint "user_id", null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.boolean "free"
     t.index ["category_id"], name: "index_plans_on_category_id"
     t.index ["user_id"], name: "index_plans_on_user_id"
   end

@@ -1,0 +1,2 @@
+class SelectedPlansController < ApplicationController
+end
