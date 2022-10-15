@@ -9,6 +9,7 @@ class SelectedPlansController < ApplicationController
   end
 
   def create
+    raise
     @selected = SelectedPlan.new(selected_params)
     @selected.user_id = current_user.id
     @plan = Plan.find(params[:plan_id])
