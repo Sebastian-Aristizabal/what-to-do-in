@@ -3,27 +3,22 @@ class PlansController < ApplicationController
   before_action :find_plan, only: %i[destroy show]
 
   def index
-    # @plans = Plan.where(category_id: 1)
-    if params["category_id"] == "1"
-      @plans = Plan.where(category_id: 1)
-    elsif params[:category_id] == "2"
-      @plans = Plan.where(category_id: 2)
+    if params[:category_id]
+      @category = Category.find(params[:category_id])
+      if @category.name == "Cultural"
+        @plans = Plan.where(category_id: @category.id)
+      elsif @category.name == "Ecologico"
+        @plans = Plan.where(category_id: @category.id)
+      elsif @category.name == "Gastronomico"
+        @plans = Plan.where(category_id: @category.id)
+      elsif @category.name == "Party"
+        @plans = Plan.where(category_id: @category.id)
+      end
+    elsif params[:user_id]
+      @plans = Plan.where(user_id: params[:user_id])
     else
       @plans = Plan.all
     end
-
-    # if @category.name == "Cultural"
-    #   @plans = Plan.where(category_id: @category.id)
-    # elsif @category.name == "Ecologico"
-    #   @plans = Plan.where(category_id: @category.id)
-    # elsif @category.name == "Gastronomico"
-    #   @plans = Plan.where(category_id: @category.id)
-    # elsif @category.name == "Party"
-    #   @plans = Plan.where(category_id: @category.id)
-    # else
-    #   @plans = Plan.all
-    # end
-
   end
 
   def show
@@ -55,6 +50,6 @@ class PlansController < ApplicationController
   end
 
   def plan_params
-    params.require(:plan).permit(:category_id)
+    params.require(:plan).permit(:category_id, :title, :video_url, :details, :start_date)
   end
 end

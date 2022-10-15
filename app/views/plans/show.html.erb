@@ -1,0 +1,14 @@
+<h1><%= @plan.title %></h1>
+<p><%= @plan.details %></p>
+<p><%= @plan.start_date %></p>
+<p><%= @plan.end_date %></p>
+<p><%= @plan.start_hour %></p>
+<p><%= @plan.end_hour %></p>
+<p><%= @plan.address %></p>
+<p><% if @plan.free %></p>
+    <%= "Gratis" %>
+    <% else %>
+    <%= "De pago" %>
+    <% end %>
+<%<%= link_to "Seleccionar❤", plan_selected_plans_path(plan_id: @plan.id) %>
+<%# <%= link_to "Seleccionar❤", selected_plans_path(plan_id: @plan.id) %>
