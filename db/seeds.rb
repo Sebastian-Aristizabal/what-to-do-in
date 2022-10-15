@@ -9,6 +9,12 @@
 
 require "open-uri"
 
+Plan.destroy_all
+User.destroy_all
+Category.destroy_all
+Review.destroy_all
+SelectedPlan.destroy_all
+
 #creando usuarios
 
 #propietarios
@@ -79,6 +85,7 @@ plan_3.save
 plan_4 = Plan.new(title:"Lago Normandia", video_url:"", details:"Un recorrido lleno de historia, naturaleza y mucha agua, caminaremos por senderos veredales, contemplando el paisaje rural de nuestras montañas antioqueñas", end_date:"", start_date:"", start_hour:"00:00:00", end_hour:"23:59:59", address:"El retiro - Envigado", link_web:"", instagram_link:"https://www.instagram.com/viajeapie_", facebook_link: "", free: true,  category_id: category_2.id, user_id: user_2.id)
 photo_4 = URI.open("https://orientemap.com/wp-content/uploads/Retiro_CascadaNormandia_1.jpg")
 plan_4.photos.attach(io: photo_4, filename:"photo_normadia.png", content_type: "image/png")
+plan_4.save
 
 plan_5 = Plan.new(title:"Restaurante El Cielo", video_url:"", details:"El restaurante Elcielo se caracteriza por brindarle a sus clientes una experiencia culinaria única, en la que desde el primer plato se involucran todos los sentidos. Se mezclan técnicas que van desde la cocina de vanguardia hasta métodos tradicionales de la cocina colombiana. Colombia, precisamente, está en cada paso dentro de Elcielo: los ingredientes y quienes los preparan son colombianos que sueñan con que nuestros sabores lleguen a los ciudadanos del mundo", end_date:"", start_date:"", start_hour:"12:00:00", end_hour:"23:00:00", address:"Cl. 7D #43c36, Medellín, El Poblado, Medellín, Antioquia", link_web:"https://elcielogroup.com/el-cielo", instagram_link:"https://www.instagram.com/elcielomedellin/", facebook_link: "", free: false, category_id: category_3.id,  user_id: user_3.id )
 photo_5 = URI.open("https://www.momento24.co/wp-content/uploads/2021/10/RESTAURANTE-EL-CIELO.jpg")
