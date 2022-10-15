@@ -1,8 +1,8 @@
 <h1>planes</h1>
-<h1>
   <% @plans.each do |plan| %>
   <p>Id plan:<%= plan.id %> </p>
   <p>Title plan:<%= plan.title %> </p>
+  <p>Category:<%= plan.category_id %> </p>
+  <%= link_to "Details", plan_path(plan) %>
   <%#= link_to "Details", booking_path(booking) %>
 <% end %>
-</h1>

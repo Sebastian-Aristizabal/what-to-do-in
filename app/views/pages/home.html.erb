@@ -2,9 +2,9 @@
 <%#= raise %>
 <% @category.each do |category| %>
   <p>Category: <%= category.name %> </p>
-  <%= link_to plans_path(category_id: 2)%>
-  <%#= link_to "Details", plans_path %>
+  <%= link_to "Details", plans_path(category_id: category.id)%>
 <% end %>
 
-
 <h6><%= link_to "TODOS LOS PLANES", plans_path %></h6>
+<br>
+<h6><%= link_to "Nuevo plan", new_plan_path %></h6>
