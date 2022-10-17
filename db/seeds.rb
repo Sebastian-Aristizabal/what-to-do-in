@@ -6,14 +6,13 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-
 require "open-uri"
 
-Plan.destroy_all
-User.destroy_all
-Category.destroy_all
-Review.destroy_all
 SelectedPlan.destroy_all
+Review.destroy_all
+Plan.destroy_all
+Category.destroy_all
+User.destroy_all
 
 #creando usuarios
 
@@ -111,8 +110,8 @@ plan_8.save
 
 #seleccion de planes
 
-selected_plans_1 = SelectedPlan.new(user_id: user_5.id, plan_id: plan_4.id, status: "asistiré")
-selected_plans_2 = SelectedPlan.new(user_id: user_6.id, plan_id: plan_3.id, status: "asistí")
+selected_plans_1 = SelectedPlan.new(user_id: user_5.id, plan_id: plan_4.id, status: 0)
+selected_plans_2 = SelectedPlan.new(user_id: user_6.id, plan_id: plan_3.id, status: 2)
 selected_plans_1.save
 selected_plans_2.save
 #terminan la seleccion de planes
