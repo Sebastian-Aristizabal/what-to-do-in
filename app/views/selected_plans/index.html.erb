@@ -1,5 +1,12 @@
-<h1>Aqui mis planes seleccionados</h1>
-<% @selected.each do |selected| %>
-  <p> Id plan:<%= selected.id %> </p>
-  <%# <%= link_to "Details", plan_path(plan) %>
-<% end %>
+<div class="container">
+  <h1>Aqui mis planes seleccionados</h1>
+  <% @selected.each do |selected|%>
+    <div class="card container">
+      <p> <strong>Title:</strong> <%= selected.plan.title %> </p>
+      <p> <strong>Id plan:</strong> <%= selected.plan_id %> </p>
+      <p> <strong>Id selected:</strong></strong> <%= selected.id %> </p>
+      <p> <strong>status:</strong> <%= selected.status %> </p>
+    </div>
+    <%# <%= link_to "Details", plan_path(plan) %>
+  <% end %>
+</div>
