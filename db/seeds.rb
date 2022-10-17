@@ -113,5 +113,6 @@ plan_8.save
 
 selected_plans_1 = SelectedPlan.new(user_id: user_5.id, plan_id: plan_4.id, status: "asistiré")
 selected_plans_2 = SelectedPlan.new(user_id: user_6.id, plan_id: plan_3.id, status: "asistí")
-
+selected_plans_1.save
+selected_plans_2.save
 #terminan la seleccion de planes
