@@ -8,4 +8,3 @@ Rails.application.routes.draw do
   resources :selected_plans, only: [:index, :update]
   resources :reviews, only: [:edit, :update, :destroy]
 end
-
