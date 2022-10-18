@@ -1,4 +1,5 @@
 class SelectedPlansController < ApplicationController
+  before_action :authenticate_user!
   def index
     @selected = SelectedPlan.all
   end
@@ -19,7 +20,7 @@ class SelectedPlansController < ApplicationController
     if @selected.save
       redirect_to selected_plans_path
     else
-      render :new, status: :unprocessable_entity
+      redirect_to new_user_registration_path, status: :unprocessable_entity
     end
   end
 
