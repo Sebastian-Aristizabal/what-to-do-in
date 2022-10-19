@@ -1,6 +1,6 @@
 class PlansController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[ index show ]
-  before_action :find_plan, only: %i[destroy show]
+  before_action :find_plan, only: %i[destroy show edit update]
 
   def index
     if params[:category_id]
@@ -38,9 +38,17 @@ class PlansController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @plan.update(plan_params)
+    redirect_to plan_path(@plan)
+  end
+
   def destroy
     @plan.destroy
-    redirect_to list_path(@plan.list), status: :see_other
+    redirect_to plans_path, status: :see_other
   end
 
   private
@@ -50,6 +58,6 @@ class PlansController < ApplicationController
   end
 
   def plan_params
-    params.require(:plan).permit(:category_id, :title, :video_url, :details, :start_date)
+    params.require(:plan).permit(:title, :video_url, :details, :start_date, :end_date, :start_hour, :end_hour, :address, :link_web, :instagram_link, :facebook_link, :category_id, :user_id, :latitude, :longitude, :free)
   end
 end
