@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create]
     resources :selected_plans, only: [:create]
   end
-  resources :selected_plans, only: [:index, :update]
+  resources :selected_plans, only: [:index, :update, :destroy]
   resources :reviews, only: [:edit, :update, :destroy]
 end
