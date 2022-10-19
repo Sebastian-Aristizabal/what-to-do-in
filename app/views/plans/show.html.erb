@@ -15,10 +15,7 @@
     <% else %>
       <%= link_to "Seleccionar ❤", new_user_session_path, class: 'btn btn-primary' %>
     <% end %>
-<%# <%= link_to "Seleccionar❤", selected_plans_path(plan_id: @plan) %>
-<%# <%= form_for [@plan, @selected] do |f| %>
-  <%# <%= f.submit %>
-<%# <% end %>
+
 <% if current_user.id == @plan.user_id %>
   <%= button_to "Delete", @plan, :method => :delete %>
   <%= link_to "Edit", edit_plan_path(plan_id: @plan), class: 'btn btn-primary' %>
