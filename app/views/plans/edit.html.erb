@@ -1,8 +1,6 @@
-
-
-<h2 class="title-form">¡¡Nuevo parche!! </h2>
-<div class="contenedor_newplans">
-      <%=  simple_form_for @plan do |f| %>
+<div class="s-3">
+    <h4> ¡¡New plan!! </h4>
+      <%=  simple_form_for @plan, url: plan_path  do |f| %>
         <%= f.input :title %>
         <%= f.input :video_url %>
         <%= f.input :details %>
@@ -22,4 +20,3 @@
         <%= f.submit "submit", class:"btn btn-primary" %>
       <% end %>
 </div>
-

@@ -6,7 +6,14 @@
       <p> <strong>Id plan:</strong> <%= selected.plan_id %> </p>
       <p> <strong>Id selected:</strong></strong> <%= selected.id %> </p>
       <p> <strong>status:</strong> <%= selected.status %> </p>
+      <%= link_to "Ver ❤", plan_path(id: selected.plan_id), class: 'btn btn-primary' %>
+      <%= link_to "Eliminar",
+        selected_plan_path(selected),
+        class: "btn btn-primary",
+        data: {turbo_method: :delete}
+      %>
     </div>
     <%# <%= link_to "Details", plan_path(plan) %>
   <% end %>
+
 </div>
