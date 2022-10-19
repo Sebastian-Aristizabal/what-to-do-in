@@ -1,16 +1,26 @@
-<h1><%= @plan.title %></h1>
-<p><%= @plan.details %></p>
-<p><%= @plan.start_date %></p>
-<p><%= @plan.end_date %></p>
-<p><%= @plan.start_hour %></p>
-<p><%= @plan.end_hour %></p>
-<p><%= @plan.address %></p>
-<p><% if @plan.free %></p>
-    <%= "Gratis" %>
-    <% else %>
-    <%= "De pago" %>
-    <% end %>
-<%= button_to "Seleccionar ❤", plan_selected_plans_path(plan_id: @plan), method: :post, class: 'btn btn-primary' %>
+<h2 class="title-form">DETALLES MI PERRO!</h2>
+  <div class="contenedor_detalles">
+    <h1><%=  @plan.title %></h1>
+    <p detalles ><%= @plan.details %></p>
+    <p><%= @plan.start_date %></p>
+    <p><%= @plan.end_date %></p>
+    <p><%= @plan.start_hour %></p>
+    <p><%= @plan.end_hour %></p>
+    <p><%= @plan.address %></p>
+    <p><% if @plan.free %></p>
+        <%= "Gratis" %>
+        <% else %>
+        <%= "De pago" %>
+        <% end %>
+    <%= button_to "Seleccionar ❤", plan_selected_plans_path(plan_id: @plan), method: :post, class: 'btn btn-primary' %>
+  </div>
+
+
+
+
+
+
+
 <%# <%= link_to "Seleccionar❤", selected_plans_path(plan_id: @plan) %>
 <%# <%= form_for [@plan, @selected] do |f| %>
   <%# <%= f.submit %>

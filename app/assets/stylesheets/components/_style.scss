@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@700');
+
+
+@import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
+@import url("components/cards.css");
+@import url("components/banner.css");
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap');
+
+body {
+  margin: 0;
+  font-family: Open Sans;
+}
+
+h1, h2, h3, h4 {
+  font-family: Poppins;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+p{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 150%;
+}
+/*.cuadrado{
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+}*/
+
+.title-form{
+  font-family: Poppins;
+  text-align: center;
+}
+
+
