@@ -12,7 +12,7 @@ class SelectedPlansController < ApplicationController
   def create
     if SelectedPlan.exists?(:plan_id => params[:plan_id])
       redirect_to selected_plans_path
-    else
+    elsif
       @plan = Plan.find(params[:plan_id])
       @selected = SelectedPlan.new
       # @selected = SelectedPlan.new(user_id: current_user.id, plan_id: 7, status: "hola")
@@ -23,8 +23,10 @@ class SelectedPlansController < ApplicationController
       if @selected.save
         redirect_to selected_plans_path
       else
-        redirect_to new_user_registration_path, status: :unprocessable_entity
+        redirect_to new_user_session_path, status: :unprocessable_entity
       end
+    else
+      redirect_to new_user_session_path, status: :unprocessable_entity
     end
   end
 
