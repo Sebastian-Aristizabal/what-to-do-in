@@ -3,6 +3,7 @@ class PlansController < ApplicationController
   before_action :find_plan, only: %i[destroy show edit update]
 
   def index
+
     if params[:category_id]
       @category = Category.find(params[:category_id])
       if @category.name == "Cultural"
@@ -19,9 +20,13 @@ class PlansController < ApplicationController
     else
       @plans = Plan.all
     end
+
+
+
   end
 
   def show
+  @review = Review.new
   end
 
   def new
