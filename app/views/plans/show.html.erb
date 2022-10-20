@@ -1,27 +1,47 @@
-<h1><%= @plan.title %></h1>
-<p><%= @plan.details %></p>
-<p><%= @plan.start_date %></p>
-<p><%= @plan.end_date %></p>
-<p><%= @plan.start_hour %></p>
-<p><%= @plan.end_hour %></p>
-<p><%= @plan.address %></p>
-<p><% if @plan.free %></p>
-    <%= "Gratis" %>
+<h2 class="title-form">DETALLES MI PERRO!</h2>
+  <div class="contenedor_detalles">
+    <h1><%= @plan.title %></h1>
+    <p><%= @plan.details %></p>
+    <p><%= @plan.start_date %></p>
+    <p><%= @plan.end_date %></p>
+    <p><%= @plan.start_hour %></p>
+    <p><%= @plan.end_hour %></p>
+    <p><%= @plan.address %></p>
+    <p><% if @plan.free %></p>
+      <%= "Gratis" %>
     <% else %>
-    <%= "De pago" %>
+      <%= "De pago" %>
     <% end %>
     <% if user_signed_in? %>
       <%= link_to "Seleccionar ❤", plan_selected_plans_path(plan_id: @plan), data:{turbo_method: :post}, class: 'btn btn-primary' %>
     <% else %>
       <%= link_to "Seleccionar ❤", new_user_session_path, class: 'btn btn-primary' %>
     <% end %>
-<%# <%= link_to "Seleccionar❤", selected_plans_path(plan_id: @plan) %>
-<%# <%= form_for [@plan, @selected] do |f| %>
-  <%# <%= f.submit %>
-<%# <% end %>
+
+
     <% if user_signed_in? %>
       <% if current_user.id == @plan.user_id %>
         <%= button_to "Delete", @plan, :method => :delete %>
         <%= link_to "Edit", edit_plan_path(plan_id: @plan.id), class: 'btn btn-primary' %>
       <% end %>
     <% end %>
+  </div>
+
+  <div class=" reviews">
+    <h2 class="title-form"> COMENTARIOS MI PERRO!</h2>
+    <p><strong>Reviews</strong></p>
+    <ul class="list-group">
+      <% @plan.reviews.each do |review| %>
+        <li class="list-group-item"><%= review.comment %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="formulario_review">
+    <h2 class="title-form">DEJA TU COMENTARIO MI PERRO!</h2>
+        <%= simple_form_for [@plan, @review] do |f| %>
+          <%= f.input :comment, label: 'Haz tu comentario' %>
+          <%= f.input :rating, collection: (1..5).to_a, label: 'Valora al chef (1..5)' %>
+          <%= f.submit "Submit", class: "btn btn-dark", style: "width:100%"%>
+        <% end %>
+  </div>

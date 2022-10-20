@@ -1,5 +1,7 @@
-<div class="s-3">
-    <h4> ¡¡New plan!! </h4>
+
+
+<h2 class="title-form">¡¡Nuevo parche!! </h2>
+<div class="contenedor_newplans">
       <%=  simple_form_for @plan do |f| %>
         <%= f.input :title %>
         <%= f.input :video_url %>
@@ -21,21 +23,3 @@
       <% end %>
 </div>
 
-    <%# t.string "title"
-    t.string "video_url"
-    t.text "details"
-    t.datetime "start_date", precision: nil
-    t.datetime "end_date", precision: nil
-    t.datetime "start_hour", precision: nil
-    t.datetime "end_hour", precision: nil
-    t.string "address"
-    t.string "link_web"
-    t.string "instagram_link"
-    t.string "facebook_link"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "category_id", null: false
-    t.bigint "user_id", null: false
-    t.float "latitude"
-    t.float "longitude"
-    t.boolean "free" %>
