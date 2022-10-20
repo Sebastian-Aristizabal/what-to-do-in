@@ -1,16 +1,16 @@
 <h2 class="title-form">DETALLES MI PERRO!</h2>
   <div class="contenedor_detalles">
-<h1><%= @plan.title %></h1>
-<p><%= @plan.details %></p>
-<p><%= @plan.start_date %></p>
-<p><%= @plan.end_date %></p>
-<p><%= @plan.start_hour %></p>
-<p><%= @plan.end_hour %></p>
-<p><%= @plan.address %></p>
-<p><% if @plan.free %></p>
-    <%= "Gratis" %>
+    <h1><%= @plan.title %></h1>
+    <p><%= @plan.details %></p>
+    <p><%= @plan.start_date %></p>
+    <p><%= @plan.end_date %></p>
+    <p><%= @plan.start_hour %></p>
+    <p><%= @plan.end_hour %></p>
+    <p><%= @plan.address %></p>
+    <p><% if @plan.free %></p>
+      <%= "Gratis" %>
     <% else %>
-    <%= "De pago" %>
+      <%= "De pago" %>
     <% end %>
     <% if user_signed_in? %>
       <%= link_to "Seleccionar ❤", plan_selected_plans_path(plan_id: @plan), data:{turbo_method: :post}, class: 'btn btn-primary' %>
@@ -18,11 +18,14 @@
       <%= link_to "Seleccionar ❤", new_user_session_path, class: 'btn btn-primary' %>
     <% end %>
 
-    <% if current_user.id == @plan.user_id %>
-      <%= button_to "Delete", @plan, :method => :delete %>
-      <%= link_to "Edit", edit_plan_path(plan_id: @plan), class: 'btn btn-primary' %>
+
+    <% if user_signed_in? %>
+      <% if current_user.id == @plan.user_id %>
+        <%= button_to "Delete", @plan, :method => :delete %>
+        <%= link_to "Edit", edit_plan_path(plan_id: @plan.id), class: 'btn btn-primary' %>
+      <% end %>
     <% end %>
-      </div>
+  </div>
 
   <div class=" reviews">
     <h2 class="title-form"> COMENTARIOS MI PERRO!</h2>
@@ -33,7 +36,6 @@
       <% end %>
     </ul>
   </div>
-
 
   <div class="formulario_review">
     <h2 class="title-form">DEJA TU COMENTARIO MI PERRO!</h2>
