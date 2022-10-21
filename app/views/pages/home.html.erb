@@ -1,10 +1,23 @@
-<h2 class="title-form">CATEGORIAS</h2>
+<h2 class="title-form">PARCHESE EN MEDELLIN</h2>
 <%#= raise %>
-<% @category.each do |category| %>
-  <p>Category: <%= category.name %> </p>
-  <%= link_to "Details", plans_path(category_id: category.id)%>
-<% end %>
+<ul class="cards">
+    <% @category.each do |category| %>
 
-<h6><%= link_to "TODOS LOS PLANES", plans_path %></h6>
-<br>
-<h6><%= link_to "Nuevo plan", new_plan_path %></h6>
+        <li class="cards__item">
+            <div class="card">
+                <div class="card__image card__image--record"></div>
+                <div class="card__content">
+                    <div class="card__title"><%= category.name %></div>
+
+                    <%= link_to "Details", plans_path(category_id: category.id),class:"btn btn--block card__btn"%>
+                </div>
+            </div>
+        </li>
+
+         <!--<p>Category: <%= category.name %></p>-->
+      <%#= link_to "Details", plans_path(category_id: category.id)%>
+    <% end %>
+ </ul>
+    <h6><%= link_to "TODOS LOS PLANES", plans_path %></h6>
+    <br>
+    <h6><%= link_to "Nuevo plan", new_plan_path %></h6>
