@@ -20,9 +20,6 @@ class PlansController < ApplicationController
     else
       @plans = Plan.all
     end
-
-
-
   end
 
   def show
