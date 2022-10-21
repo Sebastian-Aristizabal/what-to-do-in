@@ -2,14 +2,13 @@
 <%#= raise %>
 <ul class="cards">
     <% @category.each do |category| %>
-
         <li class="cards__item">
             <div class="card">
                 <div class="card__image card__image--record"></div>
                 <div class="card__content">
-                    <div class="card__title"><%= category.name %></div>
+                    <div class="card__title"><%= category.name %></div> 
 
-                    <%= link_to "PARCHES", plans_path(category_id: category.id),class:"btn btn--block card__btn"%>
+                    <%= link_to "PARCHE", plans_path(category_id: category.id),class:"btn btn--block card__btn"%>
                 </div>
             </div>
         </li>
