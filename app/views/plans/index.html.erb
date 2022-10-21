@@ -1,8 +1,15 @@
-<h1>planes</h1>
-  <% @plans.each do |plan| %>
-  <p>Id plan:<%= plan.id %> </p>
-  <p>Title plan:<%= plan.title %> </p>
-  <p>Category:<%= plan.category_id %> </p>
-  <%= link_to "Details", plan_path(plan) %>
-  <%#= link_to "Details", booking_path(booking) %>
-<% end %>
+<h2 class="title-form">PARCHES</h2>
+<ul class="cards">
+    <% @plans.each do |plan| %>
+         <li class="cards__item">
+            <div class="card">
+                <div class="card__image card__image--record"></div>
+                <div class="card__content">
+                    <div class="card__title"><%= plan.title %></div>
+                    <p class="card__text">Parche: <i> <%= @category.name %> </i></p>
+                    <%= link_to "Details", plan_path(plan),class:"btn btn--block card__btn" %>
+                </div>
+            </div>
+        </li>
+    <% end %>
+</ul>
