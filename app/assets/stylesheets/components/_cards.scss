@@ -145,7 +145,9 @@ img {
     transition: .2s
 }
 
-.card:hover,
+.card:hover{
+  transform: scale(1.1);
+}
 .card__image {
     filter: contrast(100%);
 }

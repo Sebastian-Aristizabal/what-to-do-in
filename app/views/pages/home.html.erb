@@ -9,13 +9,12 @@
                 <div class="card__content">
                     <div class="card__title"><%= category.name %></div>
 
-                    <%= link_to "Details", plans_path(category_id: category.id),class:"btn btn--block card__btn"%>
+                    <%= link_to "PARCHES", plans_path(category_id: category.id),class:"btn btn--block card__btn"%>
                 </div>
             </div>
         </li>
 
-         <!--<p>Category: <%= category.name %></p>-->
-      <%#= link_to "Details", plans_path(category_id: category.id)%>
+
     <% end %>
  </ul>
     <h6><%= link_to "TODOS LOS PLANES", plans_path %></h6>
