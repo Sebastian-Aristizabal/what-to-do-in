@@ -8,8 +8,8 @@ class Plan < ApplicationRecord
   # validate :date_invalid
   # before_save :date_invalid
 
-  validate :hour_invalid
-  before_save :hour_invalid
+  # validate :hour_invalid
+  # before_save :hour_invalid
 
   include PgSearch::Model
   pg_search_scope :search,
