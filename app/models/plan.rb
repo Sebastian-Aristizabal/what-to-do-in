@@ -5,8 +5,8 @@ class Plan < ApplicationRecord
   belongs_to :category
   belongs_to :user
   validates :title, :details, :address, presence: true
-  validate :date_invalid
-  before_save :date_invalid
+  # validate :date_invalid
+  # before_save :date_invalid
 
   validate :hour_invalid
   before_save :hour_invalid
