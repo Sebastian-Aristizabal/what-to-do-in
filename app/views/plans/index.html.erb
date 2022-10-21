@@ -6,7 +6,7 @@
                 <div class="card__image card__image--record"></div>
                 <div class="card__content">
                     <div class="card__title"><%= plan.title %></div>
-                    <p class="card__text">Parche: <i> <%= @category.name %> </i></p>
+                     <p class="card__text">Parche: <i> <%= plan.category.name %> </i></p>
                     <%= link_to "Details", plan_path(plan),class:"btn btn--block card__btn" %>
                 </div>
             </div>
