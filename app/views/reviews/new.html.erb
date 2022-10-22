@@ -1,6 +1,7 @@
  <h1>New review</h1>
     <%= simple_form_for [@plan, @review] do |f| %>
     <%= f.input :comment, placeholder: 'Haz tu comentario' %>
-    <%= f.input :rating, placeholder: 'Valora al chef (1..5)' %>
+    <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: {data: {controller: "star-rating"}} %>
+    <%#= f.input :rating, placeholder: 'Valora al chef (1..5)' %>
     <%= f.submit "Submit review", class: "btn btn-primary" %>
  <% end %>
