@@ -2,10 +2,10 @@
   <div class="contenedor_detalles">
     <h1><%= @plan.title %></h1>
     <p><%= @plan.details %></p>
-    <p><%= @plan.start_date %></p>
-    <p><%= @plan.end_date %></p>
-    <p><%= @plan.start_hour %></p>
-    <p><%= @plan.end_hour %></p>
+    <p>Fecha de inicio: <%= @plan.start_date %></p>
+    <p>Fecha de final:<%= @plan.end_date %></p>
+    <p>Hora inicial: <%= @plan.start_hour.time %></p>
+    <p>Hora final: <%= @plan.end_hour.time %></p>
     <p><%= @plan.address %></p>
     <p><% if @plan.free %></p>
       <%= "Gratis" %>
@@ -29,14 +29,14 @@
   </div>
 
 
-  <div class=" reviews">
+  <div class=" reviews ">
     <h2 class="title-form"> COMENTARIOS MI PERRO!</h2>
-    <%# <p> <%= @plan.review.rating %> </p>
     <p><strong>Reviews</strong></p>
     <ul class="list-group">
 
       <% @plan.reviews.each do |review| %>
         <li class="list-group-item"><%= review.comment %></li>
+        <p> <%= "⭐" * review.rating %> </p>
         <% if user_signed_in? %>
             <% if current_user.id == review.user_id %>
              <%= button_to "Delete", review_path(review), :method => :delete %>
@@ -48,9 +48,9 @@
 
   <div class="formulario_review">
     <h2 class="title-form">DEJA TU COMENTARIO MI PERRO!</h2>
-        <%= simple_form_for [@plan, @review] do |f| %>
+        <%= simple_form_for([@plan, @review], data: { controller: "form-submit" }) do |f| %>
           <%= f.input :comment, label: 'Haz tu comentario' %>
-          <%= f.input :rating, collection: (1..5).to_a, label: "Califica tu experiencia", input_html: {data: {controller: "star-rating"}} %>
+          <%= f.input :rating, collection: (1..5).to_a, label: "Califica tu experiencia", input_html: {data: {controller: "star-rating", action: "click->form-submit#submit"}} %>
           <%= f.submit "Submit", class: "btn btn-primary"%>
         <% end %>
   </div>
