@@ -1,4 +1,4 @@
-<h2 class="title-form">DETALLES MI PERRO!</h2>
+<h2 class="title-form">¡DETALLES DEL PARCHE!</h2>
   <div class="contenedor_detalles">
     <h1><%= @plan.title %></h1>
     <p><%= @plan.details %></p>
@@ -13,16 +13,16 @@
       <%= "De pago" %>
     <% end %>
     <% if user_signed_in? %>
-      <%= link_to "Seleccionar ❤", plan_selected_plans_path(plan_id: @plan), data:{turbo_method: :post}, class: 'btn btn-primary' %>
+      <%= link_to "Seleccionar ❤", plan_selected_plans_path(plan_id: @plan), data:{turbo_method: :post}, class: "btn btn-ghost" %>
     <% else %>
-      <%= link_to "Seleccionar ❤", new_user_session_path, class: 'btn btn-primary' %>
+      <%= link_to "Seleccionar ❤", new_user_session_path, class: "btn btn-ghost" %>
     <% end %>
 
 
     <% if user_signed_in? %>
       <% if current_user.id == @plan.user_id %>
-        <%= button_to "Delete", @plan, :method => :delete %>
-        <%= link_to "Edit", edit_plan_path(plan_id: @plan.id), class: 'btn btn-primary' %>
+        <%= button_to "Delete", @plan, :method => :delete, class: "btn btn-ghost"  %>
+        <%= link_to "Edit", edit_plan_path(plan_id: @plan.id), class: "btn btn-ghost" %>
       <% end %>
     <% end %>
 
@@ -30,7 +30,7 @@
 
 
   <div class=" reviews ">
-    <h2 class="title-form"> COMENTARIOS MI PERRO!</h2>
+    <h2 class="title-form"> ¡COMENTARIOS!</h2>
     <p><strong>Reviews</strong></p>
     <ul class="list-group">
 
@@ -47,10 +47,10 @@
   </div>
 
   <div class="formulario_review">
-    <h2 class="title-form">DEJA TU COMENTARIO MI PERRO!</h2>
+    <h2 class="title-form">¡DEJA TU COMENTARIO!</h2>
         <%= simple_form_for([@plan, @review], data: { controller: "form-submit" }) do |f| %>
           <%= f.input :comment, label: 'Haz tu comentario' %>
           <%= f.input :rating, collection: (1..5).to_a, label: "Califica tu experiencia", input_html: {data: {controller: "star-rating", action: "click->form-submit#submit"}} %>
-          <%= f.submit "Submit", class: "btn btn-primary"%>
+          <%= f.submit "Submit", class: "btn btn-ghost"%>
         <% end %>
   </div>

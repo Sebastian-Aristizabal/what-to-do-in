@@ -1,15 +1,15 @@
 <div class="container">
-  <h1>Aqui mis planes seleccionados</h1>
+  <h2 class="title-form">MIS PARCHES SELECCIONADOS EN MEDELLIN</h2>
   <% @selected.each do |selected|%>
     <div class="card container">
       <p> <strong>Title:</strong> <%= selected.plan.title %> </p>
       <p> <strong>Id plan:</strong> <%= selected.plan_id %> </p>
       <p> <strong>Id selected:</strong></strong> <%= selected.id %> </p>
       <p> <strong>status:</strong> <%= selected.status %> </p>
-      <%= link_to "Ver ❤", plan_path(id: selected.plan_id), class: 'btn btn-primary' %>
+      <%= link_to "Ver ❤", plan_path(id: selected.plan_id), class: "btn btn-ghost" %>
       <%= link_to "Eliminar",
         selected_plan_path(selected),
-        class: "btn btn-primary",
+        class: "btn btn-ghost",
         data: {turbo_method: :delete}
       %>
     </div>

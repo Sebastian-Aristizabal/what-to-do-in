@@ -1,22 +1,21 @@
-<div class="s-3">
-    <h4> ¡¡New plan!! </h4>
+<h2 class="title-form">¡¡EDITA TU PARCHE!! </h2>
+<div class="class="contenedor_editplans>
       <%=  simple_form_for @plan, url: plan_path  do |f| %>
         <%= f.input :title %>
         <%= f.input :video_url %>
         <%= f.input :details %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <%= f.input :start_hour %>
-        <%= f.input :end_hour %>
+        <%= f.input :start_date, as: :date, html5: true %>
+        <%= f.input :end_date, as: :date, html5: true %>
+        <%= f.input :start_hour, as: :time, html5: true %>
+        <%= f.input :end_hour, as: :time, html5: true %>
         <%= f.input :address %>
         <%= f.input :link_web %>
         <%= f.input :instagram_link %>
         <%= f.input :facebook_link %>
         <%# <%= f.input :category_id, collection: [Category.order(:name)], as: :radio_buttons, wrapper: :vertical_collection_inline  %>
         <%= f.collection_select :category_id, Category.order(:name), :id, :name  %>
-        <%= f.input :latitude %>
-        <%= f.input :longitude %>
+
         <%= f.input :free %>
-        <%= f.submit "submit", class:"btn btn-primary" %>
+        <%= f.submit "submit", class: "btn btn-ghost" %>
       <% end %>
 </div>
