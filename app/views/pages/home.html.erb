@@ -1,12 +1,18 @@
-<h2 class="title-form">PARCHESE EN MEDELLIN</h2>
+<h2 class="title-form">¡PARCHESE EN MEDELLIN!</h2>
 <%#= raise %>
+ <div class="parches">
+    <h6><%= link_to "TODOS LOS PARCHES", plans_path,class: "btn btn-ghost" %></h6>
+  </div>
+  <div class="Nparches">
+    <h6><%= link_to "Nuevo parche", new_plan_path, class: "btn btn-ghost" %></h6>
+  </div>
 <ul class="cards">
     <% @category.each do |category| %>
         <li class="cards__item">
             <div class="card">
                 <div class="card__image card__image--record"></div>
                 <div class="card__content">
-                    <div class="card__title"><%= category.name %></div> 
+                    <div class="card__title"><%= category.name %></div>
 
                     <%= link_to "PARCHE", plans_path(category_id: category.id),class:"btn btn--block card__btn"%>
                 </div>
@@ -16,7 +22,3 @@
 
     <% end %>
  </ul>
-    <h6><%= link_to "TODOS LOS PLANES", plans_path %></h6>
-    <br>
-    <h6><%= link_to "Nuevo plan", new_plan_path %></h6>
-
