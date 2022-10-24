@@ -29,13 +29,13 @@
 }
 
 .contenedor_detalles{
-  width: 90%;
+  width: 40%;
   height: 30%;
   padding: 20px;
   align-items: center;
   background-color: white;
   border-radius: 6px;
-  margin: 15px auto;
+  /*margin: 15px auto;*/
   flex-grow: 40;
   justify-content: center;
 }
@@ -60,7 +60,7 @@
   align-items: center;
   background-color: white;
   border-radius: 6px;
-  margin: 15px auto;
+  margin: auto 15px;
   flex-grow: 40;
   justify-content: center;
 }
@@ -166,6 +166,14 @@ img {
     transition: .2s
 }
 
+.cards1 {
+  display: flex;
+  /* flex-wrap: wrap; */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: .2s;
+}
 .cards__item {
     display: flex;
     padding: 1rem;
@@ -234,7 +242,7 @@ img {
 
 
 .card__image--record {
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/imagenes-final.appspot.com/o/fiesta.png?alt=media&token=e5d68afc-6a5d-434f-b30c-d995751c5821);
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/imagenes-final.appspot.com/o/downtown-medellin-colombia.webp?alt=media&token=37081033-31cf-4bf6-a877-20b555ae2190);
 }
 
 
@@ -293,7 +301,7 @@ img {
 }
 
 .card-time {
-  background-color: #fcfafa;
+  background-color: #ffffff;
   margin: 50px;
 }
 
