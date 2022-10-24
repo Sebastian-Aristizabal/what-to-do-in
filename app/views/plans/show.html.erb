@@ -12,11 +12,11 @@
     <p><%= @plan.details %></p>
     <div class="card-time">
     <div class="show-plan">
-      <p>Fecha de inicio: <%= @plan.start_date.to_d %></p>
+      <p>Fecha de inicio: <%= @plan.start_date.to_date %></p>
       <p>Hora inicial: <%= @plan.start_hour.strftime("%H:%M") %></p>
     </div>
     <div class="show-plan">
-      <p>Fecha de final: <%= @plan.end_date.to_d %></p>
+      <p>Fecha de final: <%= @plan.end_date.to_date %></p>
       <p>Hora final: <%= @plan.end_hour.strftime("%H:%M") %></p>
     </div>
     </div>
