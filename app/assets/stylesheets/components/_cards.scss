@@ -17,7 +17,7 @@
 }
 .title-form1 {
   font-family: Poppins;
-
+  font-weight: 800;
 }
 .contenedor_newplans{
   width: 55%;
@@ -57,28 +57,31 @@
 }
 
 .formulario_review{
-  width: 90%;
+  width: 50%;
   height: 30%;
   /*display: flex;*/
   padding: 20px;
   align-items: center;
   background-color: white;
   border-radius: 6px;
-  margin: auto 15px;
+  margin: auto auto;
   flex-grow: 40;
   justify-content: center;
+  margin-top: 42px;
 }
 .reviews{
-  width: 90%;
+  width: 50%;
   height: 30%;
   /*display: flex;*/
   padding: 20px;
   align-items: center;
   background-color: white;
   border-radius: 6px;
-  margin: 15px auto;
+  margin: auto auto;
   flex-grow: 40;
   justify-content: center;
+  padding: 0 100px;
+  margin-top: 42px;
 }
 
 .review {
@@ -95,7 +98,7 @@
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
-  opacity: 0.6;
+  opacity: 0.9;
   transition: opacity 0.3s ease;
   width: 146px;
 }
@@ -152,8 +155,10 @@ img {
     background-color: white;
     border: 1px solid #cccccc;
     border-radius: 1rem;
-    color: #696969;
+    color: #256d72;
     padding: 0.5rem;
+    font-weight: 600;
+    margin: 6px;
 }
 
 .btn--block {
@@ -249,13 +254,19 @@ img {
     background-image: url(https://firebasestorage.googleapis.com/v0/b/imagenes-final.appspot.com/o/downtown-medellin-colombia.webp?alt=media&token=37081033-31cf-4bf6-a877-20b555ae2190);
 }
 
+.mapa_fake{
+  width: 40%;
+  margin-top: -500px;
+  margin: auto 848px;
+}
+
 
 .card__title {
     color: #696969;
     font-size: 1.25rem;
     font-weight: 300;
     letter-spacing: 2px;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 .card__text {
@@ -300,7 +311,7 @@ img {
 .free {
   background-color: rgb(245, 244, 244);
   border: 1px solid #cccccc;
-  border-radius: 50%;
+
   padding: 0.5rem;
 }
 
@@ -316,4 +327,129 @@ img {
 .show-plan {
   display: flex;
   justify-content: space-around;
+}
+
+.item_review {
+  position: relative;
+  display: block;
+  padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
+  color: var(--bs-list-group-color);
+  text-decoration: none;
+  background-color: var(--bs-list-group-bg);
+}
+/*footer*/
+
+.site-footer
+{
+  background: linear-gradient(45deg,#256d72, #39c2b6) !important;
+  padding:20px 0 20px;
+  font-size:12px;
+  line-height:24px;
+  color:#000000;
+  bottom: 0;
+  margin-top: 424px;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#000000;
+}
+.site-footer a:hover
+{
+  color:#c1c3e0;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#000000
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#c1c3e0;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+.site-footer .social-icons
+{
+  text-align:right
+}
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#000000
+}
+.copyright-text
+{
+  margin:0
+}
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+
+
+
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#29aafe
+}
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+
+.social-icons a.linkedin:hover
+{
+  background-color:#007bb6
 }

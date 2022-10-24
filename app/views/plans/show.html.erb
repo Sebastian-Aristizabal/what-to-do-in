@@ -2,6 +2,7 @@
     <%# <video controls="controls" loop="loop">
       <source src="https://res.cloudinary.com/demo/video/upload/c_pad,du_10,h_360,q_70,w_480/dog.mp4" type="video/mp4" />
     </video> %>
+
     <% if @plan.photos.attached? %>
       <% @plan.photos.each do |photo| %>
           <%= image_tag(photo, :class => "photos") %>
@@ -15,6 +16,7 @@
       <p>Fecha de inicio: <%= @plan.start_date.to_date %></p>
       <p>Hora inicial: <%= @plan.start_hour.strftime("%H:%M") %></p>
     </div>
+    
     <div class="show-plan">
       <p>Fecha de final: <%= @plan.end_date.to_date %></p>
       <p>Hora final: <%= @plan.end_hour.strftime("%H:%M") %></p>
@@ -22,7 +24,7 @@
     </div>
     <div class="show-plan">
       <p>Lugar: <%= @plan.address %></p>
-      <p class="free"><% if @plan.free %>
+      <p class="free btn "><% if @plan.free %>
         <%= "Gratuito" %>
       <% else %>
         <%= "De pago" %>
@@ -46,22 +48,24 @@
   </div>
 
 
+
+
   <div class=" reviews ">
     <h2 class="title-form"> ¡COMENTARIOS!</h2>
     <ul class="list-group">
-
-      <% @plan.reviews.each do |review| %>
-        <div class="review">
-          <li class="list-group-item"><%= review.comment %></li>
-          <p> <%= "⭐" * review.rating %> </p>
-          <% if user_signed_in? %>
-              <% if current_user.id == review.user_id %>
-              <%= button_to "Delete", review_path(review), :method => :delete %>
-              <% end %>
-          <% end %>
-        </div>
-      <% end %>
-
+      <div class="cuadro">
+        <% @plan.reviews.each do |review| %>
+          <div class="review ">
+            <li class="item_review"><%= review.comment %></li>
+            <p> <%= "⭐" * review.rating %> </p>
+            <% if user_signed_in? %>
+                <% if current_user.id == review.user_id %>
+                <%= button_to "Delete", review_path(review), class: "btn btn-ghost", :method => :delete %>
+                <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </ul>
   </div>
 
