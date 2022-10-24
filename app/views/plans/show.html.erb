@@ -52,11 +52,11 @@
 
       <% @plan.reviews.each do |review| %>
         <div class="review">
-          <li class="list-group-item"><%= review.comment %></li>
+          <li class="item_review"><%= review.comment %></li>
           <p> <%= "⭐" * review.rating %> </p>
           <% if user_signed_in? %>
               <% if current_user.id == review.user_id %>
-              <%= button_to "Delete", review_path(review), :method => :delete %>
+              <%= button_to "Delete", review_path(review), class: "btn btn-ghost", :method => :delete %>
               <% end %>
           <% end %>
         </div>

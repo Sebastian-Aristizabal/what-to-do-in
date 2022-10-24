@@ -17,7 +17,7 @@
 }
 .title-form1 {
   font-family: Poppins;
-
+  font-weight: 800;
 }
 .contenedor_newplans{
   width: 55%;
@@ -152,8 +152,9 @@ img {
     background-color: white;
     border: 1px solid #cccccc;
     border-radius: 1rem;
-    color: #696969;
+    color: #256d72;
     padding: 0.5rem;
+    font-weight: 600;
 }
 
 .btn--block {
@@ -255,7 +256,7 @@ img {
     font-size: 1.25rem;
     font-weight: 300;
     letter-spacing: 2px;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 .card__text {
@@ -316,4 +317,13 @@ img {
 .show-plan {
   display: flex;
   justify-content: space-around;
+}
+
+.item_review {
+  position: relative;
+  display: block;
+  padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
+  color: var(--bs-list-group-color);
+  text-decoration: none;
+  background-color: var(--bs-list-group-bg);
 }
