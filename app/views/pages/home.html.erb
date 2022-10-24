@@ -1,20 +1,20 @@
 <h2 class="title-form">¡PARCHESE EN MEDELLIN!</h2>
 <%#= raise %>
  <div class="parches">
-    <h6><%= link_to "TODOS LOS PARCHES", plans_path,class: "btn btn-ghost" %></h6>
+    <h6><%= link_to "Todos los parches", plans_path,class: "btn btn-ghost" %></h6>
   </div>
   <div class="Nparches">
     <h6><%= link_to "Nuevo parche", new_plan_path, class: "btn btn-ghost" %></h6>
   </div>
-<ul class="cards">
+<ul class="cards1">
     <% @category.each do |category| %>
         <li class="cards__item">
             <div class="card">
                 <div class="card__image card__image--record"></div>
                 <div class="card__content">
-                    <div class="card__title"><%= category.name %></div>
+                    <div class="title-form1"><%= category.name %></div>
 
-                    <%= link_to "PARCHE", plans_path(category_id: category.id),class:"btn btn--block card__btn"%>
+                    <%= link_to "PARCHES", plans_path(category_id: category.id),class:"btn btn--block card__btn"%>
                 </div>
             </div>
         </li>
