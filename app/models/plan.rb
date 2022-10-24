@@ -38,9 +38,3 @@ class Plan < ApplicationRecord
     end
   end
 end
-
-# t.datetime "start_date", precision: nil
-# t.datetime "end_date", precision: nil
-# t.datetime "start_hour", precision: nil
-# t.datetime "end_hour", precision: nil
-# self.end_date < self.start_date && self.start_hour < Date.today
