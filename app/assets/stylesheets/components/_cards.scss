@@ -57,28 +57,29 @@
 }
 
 .formulario_review{
-  width: 90%;
+  width: 50%;
   height: 30%;
   /*display: flex;*/
   padding: 20px;
   align-items: center;
   background-color: white;
   border-radius: 6px;
-  margin: auto 15px;
+  margin: auto auto;
   flex-grow: 40;
   justify-content: center;
 }
 .reviews{
-  width: 90%;
+  width: 50%;
   height: 30%;
   /*display: flex;*/
   padding: 20px;
   align-items: center;
   background-color: white;
   border-radius: 6px;
-  margin: 15px auto;
+  margin: auto auto;
   flex-grow: 40;
   justify-content: center;
+  padding: 0 100px;
 }
 
 .review {
@@ -95,7 +96,7 @@
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
-  opacity: 0.6;
+  opacity: 0.9;
   transition: opacity 0.3s ease;
   width: 146px;
 }
@@ -301,7 +302,7 @@ img {
 .free {
   background-color: rgb(245, 244, 244);
   border: 1px solid #cccccc;
-  border-radius: 50%;
+
   padding: 0.5rem;
 }
 
