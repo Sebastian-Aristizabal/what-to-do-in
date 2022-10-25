@@ -11,6 +11,11 @@
   flex-grow: 40;
   justify-content: center;
 }
+
+.contenedor1{
+  width: 20%;
+  height: 20%;
+}
 .title-form {
   font-family: Poppins;
   text-align: center;
@@ -100,7 +105,44 @@
   font-weight: lighter;
   opacity: 0.9;
   transition: opacity 0.3s ease;
-  width: 146px;
+  max-width: 180px;
+
+}
+.col-8 {
+  flex: 0 0 66.66666667%;
+  max-width: 66.66666667%;
+}
+.p-0 {
+  padding: 0 !important;
+}
+
+.mt-4 {
+  margin-top: 1.5rem !important;
+}
+.pr-5, .px-5 {
+  padding-right: 3rem !important;
+}
+
+.mb-5, .my-5 {
+  margin-bottom: 3rem !important;
+}
+.mr-5, .mx-5 {
+  margin-right: 3rem !important;
+}
+.ml-4, .mx-4 {
+  margin-left: 1.5rem !important;
+}
+.mt-2, .my-2 {
+  margin-top: 0.5rem !important;
+}
+.col-4 {
+  flex: 0 0 33.33333333%;
+  max-width: 33.33333333%;
+}
+
+.sign-up-container {
+  display: flex;
+  background-color: white;
 }
 ////////////////////////////////////////////////////////////////////////
 /*buscador estilos*/
@@ -138,7 +180,6 @@ body {
     font-style: normal;
     font-weight: 400;
     letter-spacing: 0;
-    padding: 1rem;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -277,7 +318,7 @@ img {
 }
 .parches{
   background-color: #f4f4f4;
-  width: 178px;
+  max-width: 210px;
   height: 73px;
   padding: inherit;
 
@@ -360,7 +401,7 @@ img {
 }
 .site-footer h6
 {
-  color:#fff;
+  color:rgb(255, 255, 255);
   font-size:16px;
   text-transform:uppercase;
   margin-top:5px;
@@ -368,7 +409,7 @@ img {
 }
 .site-footer a
 {
-  color:#000000;
+  color:#ffffff;
 }
 .site-footer a:hover
 {
@@ -386,7 +427,7 @@ img {
 }
 .footer-links a
 {
-  color:#000000
+  color:#ffffff
 }
 .footer-links a:active,.footer-links a:focus,.footer-links a:hover
 {
@@ -439,7 +480,7 @@ img {
 .social-icons a:active,.social-icons a:focus,.social-icons a:hover
 {
   color:#fff;
-  background-color:#29aafe
+  background-color:#000000
 }
 .social-icons.size-sm a
 {
@@ -451,5 +492,6 @@ img {
 
 .social-icons a.linkedin:hover
 {
-  background-color:#007bb6
+  background-color:#000000
 }
+///////////////////////////////////

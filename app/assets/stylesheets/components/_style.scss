@@ -9,6 +9,7 @@
 body {
   margin: 0;
   font-family: Open Sans;
+
 }
 
 h1, h2, h3, h4 {
@@ -17,23 +18,20 @@ h1, h2, h3, h4 {
 }
 
 i{
-  color: aqua;
+  color: rgb(0, 0, 0);
 }
 
 a {
   text-decoration: none;
+  font-family: 'GT Walsheim Pro';
 }
 
 p{
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: black;
-  font-size: large;
+  font-family: 'GT Walsheim Pro';
+  color: rgb(255, 255, 255);
+
 }
-/*.cuadrado{
-  width: 200px;
-  height: 200px;
-  margin-bottom: 20px;
-}*/
+
 
 .title-form{
   font-family: Poppins;

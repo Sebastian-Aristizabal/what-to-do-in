@@ -1,32 +1,50 @@
-<h2 class="title-form">Sign up</h2>
-<div class="contenedor3">
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
-        <%= f.error_notification %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign up</title>
+</head>
+<body>
 
-        <div class="form-inputs">
-          <%=f.input :first_name,
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "first_name" }  %>
-          <%=f.input :last_name,
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "last_name" }  %>
-          <%= f.input :email,
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "email" }%>
-          <%= f.input :password,
-                      required: true,
-                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                      input_html: { autocomplete: "new-password" } %>
-          <%= f.input :password_confirmation,
-                      required: true,
-                      input_html: { autocomplete: "new-password" } %>
-        </div>
+  <h2 class="title-form">Sign up</h2>
+      <div class="sign-up-container d-flex">
+          <div class="col-8 p-0">
+            <img src="https://firebasestorage.googleapis.com/v0/b/imagenes-final.appspot.com/o/imagen2.avif?alt=media&token=e428c006-4ca3-4f98-a4d0-ba01963bf8f6" style="height:100vh" alt="banner">
+          </div>
+          <div class=" contenedor1 mt-2 mb-5  mr-5 pr-5 col-4" style="max-height:600px">
+
+              <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
+                <%= f.error_notification %>
+
+                <div class="form-inputs">
+                  <%=f.input :first_name,
+                              required: true,
+                              autofocus: true,
+                              input_html: { autocomplete: "first_name" }  %>
+                  <%=f.input :last_name,
+                              required: true,
+                              autofocus: true,
+                              input_html: { autocomplete: "last_name" }  %>
+                  <%= f.input :email,
+                              required: true,
+                              autofocus: true,
+                              input_html: { autocomplete: "email" }%>
+                  <%= f.input :password,
+                              required: true,
+                              hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                              input_html: { autocomplete: "new-password" } %>
+                  <%= f.input :password_confirmation,
+                              required: true,
+                              input_html: { autocomplete: "new-password" } %>
+                </div>
 
 
-        <%= f.button :submit, "Sign up" %>
-        <%= render "devise/shared/links" %>
-      <% end %>
-</div>
+                <%= f.button :submit, "Sign up" %>
+                <%= render "devise/shared/links" %>
+              <% end %>
+          </div>
+      </div>
+</body>
+</html>

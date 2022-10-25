@@ -18,6 +18,9 @@
 
 
       <%= yield %>
-     <%= render "shared/footer" %>
+      <% unless devise_controller? %>
+
+       <%= render "shared/footer" %>
+      <% end %>
   </body>
 </html>
