@@ -10,6 +10,7 @@
   margin: 15px auto;
   flex-grow: 40;
   justify-content: center;
+  opacity: 100%;
 }
 
 .contenedor1{
@@ -392,7 +393,7 @@ img {
   line-height:24px;
   color:#000000;
   bottom: 0;
-  margin-top: 424px;
+  margin-top: 150px;
 }
 .site-footer hr
 {
@@ -598,15 +599,17 @@ padding-right: 60px;
 
 .element{
   background-color: rgb(255, 255, 255);
-  width: 70%;
+  width: 50%;
   box-shadow: 0 0 30px;
+  padding: 0 3px;
 }
 
 .element-todos{
   background-color: rgb(255, 255, 255);
-  width: 70%;
+  width: 50%;
   box-shadow: 0 0 30px;
   right: 90%;
+  padding: 0 3px;
 }
 .feature-panel__img{
   padding: auto;
@@ -631,7 +634,7 @@ padding-right: 60px;
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.formulario {
+.nuevo_parche {
   align-items: center;
   background-color: var(--white);
   background: url("https://firebasestorage.googleapis.com/v0/b/imagenes-final.appspot.com/o/orquidiorama.jpg?alt=media&token=86dd5341-1063-4507-94e8-9ac879631971");
@@ -643,171 +646,11 @@ padding-right: 60px;
   height: 100vh;
   place-items: center;
 }
-
-.form__title {
-  font-weight: 300;
-  margin: 0;
-  margin-bottom: 1.25rem;
+.form-label {
+  margin-bottom: 0.5rem;
+  color: white;
 }
-
-.link {
-  color: var(--gray);
-  font-size: 0.9rem;
-  margin: 1.5rem 0;
-  text-decoration: none;
-}
-
-.contenedor {
-  background-color: var(--white);
-  border-radius: var(--button-radius);
-  box-shadow: 0 0.9rem 1.7rem rgba(0, 0, 0, 0.25),
-      0 0.7rem 0.7rem rgba(0, 0, 0, 0.22);
-  height: var(--max-height);
-  max-width: var(--max-width);
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-}
-p
-.contendor__formulario {
-  height: 100%;
-  position: absolute;
-  top: 0;
-  transition: all 0.6s ease-in-out;
-}
-
-.contenedor--signup {
-  left: 0;
-  width: 50%;
-  z-index: 2;
-}
-
-.contenedor.right-panel-active .contenedor--signin {
-  transform: translateX(100%);
-}
-
-.contenedor--signup {
-  left: 0;
-  opacity: 0;
-  width: 50%;
-  z-index: 1;
-}
-
-.contenedor.right-panel-active .contenedor--signup {
-  animation: show 0.6s;
-  opacity: 1;
-  transform: translateX(100%);
-  z-index: 5;
-}
-
-.contenedor__overlay {
-  height: 100%;
-  left: 50%;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  transition: transform 0.6s ease-in-out;
-  width: 50%;
-  z-index: 100;
-}
-
-.contenedor.right-panel-active .contenedor__overlay {
-  transform: translateX(-100%);
-}
-
-.overlay {
-  background-color: var(--lightblue);
-  background: url("https://firebasestorage.googleapis.com/v0/b/imagenes-final.appspot.com/o/orquidiorama.jpg?alt=media&token=86dd5341-1063-4507-94e8-9ac879631971");
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  left: -100%;
-  position: relative;
-  transform: translateX(0);
-  transition: transform 0.6s ease-in-out;
-  width: 200%;
-}
-
-.contenedor.right-panel-active .overlay {
-  transform: translateX(50%);
-}
-
-.overlay__panel {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-  position: absolute;
-  text-align: center;
-  top: 0;
-  transform: translateX(0);
-  transition: transform 0.6s ease-in-out;
-  width: 50%;
-}
-
-.overlay--left {
-  transform: translateX(-20%);
-}
-
-.contenedor.right-panel-active .overlay--left {
-  transform: translateX(0);
-}
-
-.overlay--right {
-  right: 0;
-  transform: translateX(0);
-}
-
-.contenedor.right-panel-active .overlay--right {
-  transform: translateX(20%);
-}
-
-
-
-.form > .btn {
-  margin-top: 1.5rem;
-}
-
-.btn:active {
-  transform: scale(0.95);
-}
-
-.btn:focus {
-  outline: none;
-}
-
-.form {
-  background-color: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 0 3rem;
-  height: 100%;
-  text-align: center;
-}
-
-.input {
-  background-color: #fff;
-  border: none;
-  padding: 0.9rem 0.9rem;
-  margin: 0.5rem 0;
-  width: 100%;
-}
-
-@keyframes show {
-  0%,
-  49.99% {
-      opacity: 0;
-      z-index: 1;
-  }
-
-  50%,
-  100% {
-      opacity: 1;
-      z-index: 5;
-  }
+.form-label .password .optional{
+  margin-bottom: 0.5rem;
+  color: rgb(0, 0, 0);
 }
