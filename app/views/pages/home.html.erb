@@ -1,24 +1,105 @@
-<h2 class="title-form">¡PARCHESE EN MEDELLIN!</h2>
-<%#= raise %>
- <div class="parches">
-    <h6><%= link_to "Todos los parches", plans_path,class: "btn btn-ghost" %></h6>
-  </div>
-  <div class="Nparches">
-    <h6><%= link_to "Nuevo parche", new_plan_path, class: "btn btn-ghost" %></h6>
-  </div>
-<ul class="cards1">
-    <% @category.each do |category| %>
-        <li class="cards__item">
-            <div class="card">
-                <div class="card__image card__image--record"></div>
-                <div class="card__content">
-                    <div class="title-form1"><%= category.name %></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
 
-                    <%= link_to "Parches", plans_path(category_id: category.id),class:"btn btn--block card__btn"%>
+  <div class="banner">
+        <div class="container">
+          <div class="content center-column">
+            <h1>¡QueHayPaHacer en Medellin!</h1>
+
+          </div>
+        </div>
+
+        <div class="video-container">
+           <video loop playsinline autoplay muted>
+           <source src="https://firebasestorage.googleapis.com/v0/b/imagenes-final.appspot.com/o/Medellin%20Colombia%20Desde%20los%20Cielos.mp4?alt=media&token=0d845b13-5b6c-463d-b4aa-f695cc7c5ed7" type="video/mp4">
+
+          </video>
+        </div>
+  </div>
+    <h2 class="title-form">¡PARCHESE EN MEDELLIN!</h2>
+    <ul class="cards1">
+        <% @category.each do |category| %>
+            <li class="cards__item">
+                <div class="card">
+                    <div class="card__image card__image--record"></div>
+                    <div class="card__content">
+                        <div class="title-form1"><%= category.name %></div>
+
+                        <%= link_to "Parches", plans_path(category_id: category.id),class:"btn btn--block card__btn"%>
+                    </div>
+                </div>
+            </li>
+        <% end %>
+    </ul>
+
+      <div class="element">
+
+        <div class="feature-panel feature-panel--right feature-panel--align-left feature-panel--no-desktop-overlay">
+            <div class="feature-panel__media aos-init aos-animate">
+
+
+
+                <figure class="feature-panel__media-container o-figure"
+                    itemtype="http://schema.org/ImageObject">
+                    <picture class="media media-image">
+                        <img class="feature-panel__img"
+                            srcset="https://firebasestorage.googleapis.com/v0/b/imagenes-final.appspot.com/o/tour-graffiti.jpg?alt=media&token=d90398ed-8fc8-421d-8f71-b5d84d1de828"
+                            >
+                    </picture>
+                </figure>
+
+
+
+            </div>
+            <div class="feature-panel__content feature-panel__content--medium aos-init aos-animate">
+                <h3 class="feature-panel__title feature-panel__title--medium">Quieres <b>publicar tu parche?</b></h3>
+
+                <div class="feature-panel__content-inner">
+                    <p><span>Tu puedes publicar tu parche</span><span>, en la ciudad de Medellin..</span></p>
+                    <h6><%= link_to "Nuevo parche", new_plan_path, class: "btn btn-ghost" %></h6>
                 </div>
             </div>
-        </li>
+        </div>
 
 
-    <% end %>
- </ul>
+    </div>
+     <div class="element-todos ">
+
+        <div class="feature-panel feature-panel--right1 feature-panel--align-left feature-panel--no-desktop-overlay">
+            <div class="feature-panel__media1 aos-init aos-animate">
+
+
+
+                <figure class="feature-panel__media-container o-figure"
+                    itemtype="http://schema.org/ImageObject">
+                    <picture class="media media-image">
+                        <img class="feature-panel__img"
+                            srcset="https://firebasestorage.googleapis.com/v0/b/imagenes-final.appspot.com/o/orquidiorama.jpg?alt=media&token=86dd5341-1063-4507-94e8-9ac879631971"
+                            >
+                    </picture>
+                </figure>
+
+
+
+            </div>
+            <div class="feature-panel__content feature-panel__content--medium aos-init aos-animate">
+                <h3 class="feature-panel__title feature-panel__title--medium">Todos <b>los parches</b></h3>
+
+                <div class="feature-panel__content-inner">
+                    <p><span>Aqui encontraras los mejores parches </span><span>, en la ciudad de medellin.</span></p>
+                    <h6><%= link_to "Todos los parches", plans_path,class: "btn btn-ghost" %></h6>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>

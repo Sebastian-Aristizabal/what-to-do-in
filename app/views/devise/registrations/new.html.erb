@@ -6,15 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign up</title>
 </head>
+<script>
+    const signInBtn = document.getElementById("signIn");
+    const signUpBtn = document.getElementById("signUp");
+    const fistForm = document.getElementById("form1");
+    const secondForm = document.getElementById("form2");
+    const container = document.querySelector(".container");
+
+    signInBtn.addEventListener("click", () => {
+        container.classList.remove("right-panel-active");
+    });
+
+    signUpBtn.addEventListener("click", () => {
+        container.classList.add("right-panel-active");
+    });
+
+    fistForm.addEventListener("submit", (e) => e.preventDefault());
+    secondForm.addEventListener("submit", (e) => e.preventDefault());
+
+</script>
 <body>
-
-  <h2 class="title-form">Sign up</h2>
-      <div class="sign-up-container d-flex">
-          <div class="col-8 p-0">
-            <img src="https://firebasestorage.googleapis.com/v0/b/imagenes-final.appspot.com/o/imagen2.avif?alt=media&token=e428c006-4ca3-4f98-a4d0-ba01963bf8f6" style="height:100vh" alt="banner">
-          </div>
-          <div class=" contenedor1 mt-2 mb-5  mr-5 pr-5 col-4" style="max-height:600px">
-
+ <h2 class="title-form">Sign up</h2>
               <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
                 <%= f.error_notification %>
 
@@ -44,7 +56,6 @@
                 <%= f.button :submit, "Sign up" %>
                 <%= render "devise/shared/links" %>
               <% end %>
-          </div>
-      </div>
+
 </body>
 </html>
