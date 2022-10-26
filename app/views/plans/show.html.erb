@@ -58,11 +58,7 @@
         <% @plan.reviews.each do |review| %>
           <div class="review ">
             <li class="item_review"><%= review.comment %></li>
-<<<<<<< HEAD
             <p> <%= "⭐" * review.rating.to_i %> </p>
-=======
-              <p> <%= "⭐"* review.rating %></p>
->>>>>>> master
             <% if user_signed_in? %>
                 <% if current_user.id == review.user_id %>
                 <%= button_to "Delete", review_path(review), class: "btn btn-ghost", :method => :delete %>
