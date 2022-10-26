@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon mb-5">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag ("logo1.png"), style: 'height:50px;width:auto;' %>
@@ -12,9 +12,9 @@
     <%= text_field_tag :query,
       params[:query],
       class: "form-control",
-      placeholder: "Encuentra el parche"
+      placeholder: "Encuentra el parche "
     %>
-    <%= submit_tag "🔍", class: "btn btn-ghost" %>
+
   <% end %>
 
 
