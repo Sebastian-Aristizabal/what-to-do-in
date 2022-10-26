@@ -599,18 +599,23 @@ padding-right: 60px;
 
 .element{
   background-color: rgb(255, 255, 255);
-  width: 50%;
+  // width: 50%;
   box-shadow: 0 0 30px;
   padding: 0 3px;
+  border-radius: 15px;
 }
 
 .element-todos{
   background-color: rgb(255, 255, 255);
-  width: 50%;
+  // width: 50%;
   box-shadow: 0 0 30px;
   right: 90%;
   padding: 0 3px;
+  border-radius: 15px;
 }
+
+
+
 .feature-panel__img{
   padding: auto;
 }
