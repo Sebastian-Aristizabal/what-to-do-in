@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @category = Category.all
+    @plans = Plan.all
   end
 end

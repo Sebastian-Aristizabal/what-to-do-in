@@ -6,6 +6,7 @@
     <% if @plan.photos.attached? %>
       <% @plan.photos.each do |photo| %>
           <%= image_tag(photo, :class => "photos") %>
+          <%#= cl_image_tag photo.key, class: "photos"%>
       <% end %>
     <% end %>
     <p></p>
@@ -16,7 +17,7 @@
       <p>Fecha de inicio: <%= @plan.start_date.to_date %></p>
       <p>Hora inicial: <%= @plan.start_hour.strftime("%H:%M") %></p>
     </div>
-    
+
     <div class="show-plan">
       <p>Fecha de final: <%= @plan.end_date.to_date %></p>
       <p>Hora final: <%= @plan.end_hour.strftime("%H:%M") %></p>
@@ -57,7 +58,7 @@
         <% @plan.reviews.each do |review| %>
           <div class="review ">
             <li class="item_review"><%= review.comment %></li>
-            <p> <%= "⭐" * review.rating %> </p>
+              <p> <%= "⭐"* review.rating %></p>
             <% if user_signed_in? %>
                 <% if current_user.id == review.user_id %>
                 <%= button_to "Delete", review_path(review), class: "btn btn-ghost", :method => :delete %>

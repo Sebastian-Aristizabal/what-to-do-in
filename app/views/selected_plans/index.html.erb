@@ -6,6 +6,7 @@
       <p> <strong>Id plan:</strong> <%= selected.plan_id %> </p>
       <p> <strong>Id selected:</strong></strong> <%= selected.id %> </p>
       <p> <strong>status:</strong> <%= selected.status %> </p>
+      <%= selected.user_id %>
       <%= link_to "Ver ❤", plan_path(id: selected.plan_id), class: "btn btn-ghost" %>
       <%= link_to "Eliminar",
         selected_plan_path(selected),
