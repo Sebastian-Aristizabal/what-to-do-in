@@ -97,9 +97,17 @@
                     <h6><%= link_to "Todos los parches", plans_path,class: "btn btn-ghost" %></h6>
                 </div>
             </div>
-        </div>
+       <%# </div> %>
 
 
-    </div>
+    <%# </div>
 </body>
-</html>
+</html> %>
+        <%# </li>
+    <% end %>
+ <%# </ul> %>
+ <% @plans.each do |plan| %>
+  <% plan.selected_plans.each do |selected| %>
+    <%= selected.plan_id %>
+  <% end %>
+<% end %>
