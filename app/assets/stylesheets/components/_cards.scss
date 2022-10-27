@@ -547,9 +547,7 @@ img {
 
 .content.center-column h1 {
   color: rgb(0, 0, 0);
-  text-align: center;
-  font-family: 'Gilroy';
-  font-style: normal;
+  font-style: oblique;
   font-weight: 800;
   font-size: 46px;
   width: 72%;
@@ -626,18 +624,7 @@ padding-right: 60px;
 /////////////formulario de inicio //////
 
 
-.show-plan {
-  align-items: center;
-  background-color: var(--white);
-  background: url("https://firebasestorage.googleapis.com/v0/b/imagenes-final.appspot.com/o/fotos-medellin-destacada.jpg?alt=media&token=90ff8343-b613-49f2-b3fd-328b2e155109");
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: grid;
-  height: 100vh;
-  place-items: center;
-}
+
 .form-label {
   margin-bottom: 0.5rem;
   color: rgb(0, 0, 0);
