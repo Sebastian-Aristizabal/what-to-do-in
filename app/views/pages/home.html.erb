@@ -19,9 +19,35 @@
             </div>
         </li>
     <% end %>
- </ul>
-<% @plans.each do |plan| %>
-  <% plan.selected_plans.each do |selected| %>
-    <%= selected.plan_id %>
+</ul>
+<div class="container">
+  <% @plans.each do |plan| %>
+    <div class="card m-2 p-2">
+      <% plan.selected_plans.each do |selected| %>
+        <hr>
+          <p>plan id: <%= selected.plan_id %></p>
+          <p>plan title: <%= selected.plan.title %></p>
+          <p>user id: <%= selected.user.id %></p>
+    <% end %>
+    </div>
   <% end %>
+</div>
+
+<% @selected_top.each do |selected| %>
+  <div class="card m-2 p-2">
+     <p>selected id: <%= selected[0] %></p>
+      <% selected[1].each do |s| %>
+        <%= s.user_id %>
+        <%= s.plan.title %>
+      <% end %>
+  </div>
+<% end %>
+
+<% @selected_top.each do |plan| %>
+  <div class="card m-2 p-2">
+     <p>plan id: <%= plan[0] %></p>
+        <%= plan[1][0].user_id %>
+        <%= plan[1][0].plan.title %>
+        <%= plan[1].length %>
+  </div>
 <% end %>
