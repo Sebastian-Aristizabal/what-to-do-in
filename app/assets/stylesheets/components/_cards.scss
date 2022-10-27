@@ -190,10 +190,13 @@ body {
 }
 
 img {
+
     height: auto;
     max-width: 100%;
     vertical-align: middle;
+    padding: 10px;
 }
+
 
 .btn {
     background-color: white;
@@ -595,6 +598,7 @@ padding-right: 60px;
   list-style: none;
   margin: 0;
   padding: 0;
+  padding-left: 54px;
 }
 
 .element{
