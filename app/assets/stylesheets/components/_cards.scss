@@ -10,10 +10,17 @@
   margin: 15px auto;
   flex-grow: 40;
   justify-content: center;
+  opacity: 100%;
+}
+
+.contenedor1{
+  width: 20%;
+  height: 20%;
 }
 .title-form {
   font-family: Poppins;
   text-align: center;
+  padding: 13px;
 }
 .title-form1 {
   font-family: Poppins;
@@ -100,7 +107,44 @@
   font-weight: lighter;
   opacity: 0.9;
   transition: opacity 0.3s ease;
-  width: 146px;
+  max-width: 180px;
+
+}
+.col-8 {
+  flex: 0 0 66.66666667%;
+  max-width: 66.66666667%;
+}
+.p-0 {
+  padding: 0 !important;
+}
+
+.mt-4 {
+  margin-top: 1.5rem !important;
+}
+.pr-5, .px-5 {
+  padding-right: 3rem !important;
+}
+
+.mb-5, .my-5 {
+  margin-bottom: 3rem !important;
+}
+.mr-5, .mx-5 {
+  margin-right: 3rem !important;
+}
+.ml-4, .mx-4 {
+  margin-left: 1.5rem !important;
+}
+.mt-2, .my-2 {
+  margin-top: 0.5rem !important;
+}
+.col-4 {
+  flex: 0 0 33.33333333%;
+  max-width: 33.33333333%;
+}
+
+.sign-up-container {
+  display: flex;
+  background-color: white;
 }
 ////////////////////////////////////////////////////////////////////////
 /*buscador estilos*/
@@ -120,6 +164,7 @@
   appearance: none;
   border-radius: 30px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  width: 290px;
 }
 //////////////////////////////////////////////////////////////////////////
 /* estilos cards home*/
@@ -138,7 +183,6 @@ body {
     font-style: normal;
     font-weight: 400;
     letter-spacing: 0;
-    padding: 1rem;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -182,7 +226,9 @@ img {
   margin: 0;
   padding: 0;
   transition: .2s;
+  padding: 0 100px;
 }
+
 .cards__item {
     display: flex;
     padding: 1rem;
@@ -277,7 +323,7 @@ img {
 }
 .parches{
   background-color: #f4f4f4;
-  width: 178px;
+  max-width: 210px;
   height: 73px;
   padding: inherit;
 
@@ -347,7 +393,7 @@ img {
   line-height:24px;
   color:#000000;
   bottom: 0;
-  margin-top: 424px;
+  margin-top: 150px;
 }
 .site-footer hr
 {
@@ -360,7 +406,7 @@ img {
 }
 .site-footer h6
 {
-  color:#fff;
+  color:rgb(255, 255, 255);
   font-size:16px;
   text-transform:uppercase;
   margin-top:5px;
@@ -368,7 +414,7 @@ img {
 }
 .site-footer a
 {
-  color:#000000;
+  color:#ffffff;
 }
 .site-footer a:hover
 {
@@ -386,7 +432,7 @@ img {
 }
 .footer-links a
 {
-  color:#000000
+  color:#ffffff
 }
 .footer-links a:active,.footer-links a:focus,.footer-links a:hover
 {
@@ -439,7 +485,7 @@ img {
 .social-icons a:active,.social-icons a:focus,.social-icons a:hover
 {
   color:#fff;
-  background-color:#29aafe
+  background-color:#000000
 }
 .social-icons.size-sm a
 {
@@ -451,5 +497,165 @@ img {
 
 .social-icons a.linkedin:hover
 {
-  background-color:#007bb6
+  background-color:#000000
+}
+/////////////baner//////////////////////
+.banner {
+  background-color: #f1f7f4;
+  background-position: left;
+  background-size: cover;
+  position: relative;
+  padding: 13% 0;
+  overflow: hidden;
+  color: #ffffff;
+}
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.video-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-container video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.content.center-column {
+  text-align: center;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 90%;
+  position: relative;
+  z-index: 1;
+  bottom: 30px;
+}
+
+.content.center-column h1 {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 46px;
+  width: 72%;
+  margin: 0 auto 20px;
+}
+//////////////////////////////////////////////////////////cards todos los parches y nuevo parche
+.feature-panel--right {
+  justify-content: center;
+}
+
+.feature-panel {
+padding-left: 60px;
+padding-right: 60px;
+}
+
+.feature-panel {
+  width: 100%;
+  max-width: 1280px;
+  // padding-left: 15px;
+  // padding-right: 15px;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin: 120px auto;
+}
+.feature-panel--align-left .feature-panel__title {
+  padding-left: 0;
+  margin-left: 0;
+}
+// .feature-panel {
+// margin: 120px auto;
+// }
+.feature-panel--right .feature-panel__media {
+  order: 2;
+  width: 70%;
+}
+.feature-panel--right1 .feature-panel__media1 {
+  // order: 2;
+  width: 70%;
+ }
+.feature-panel__content{
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.element{
+  background-color: rgb(255, 255, 255);
+  // width: 50%;
+  box-shadow: 0 0 30px;
+  padding: 0 3px;
+  border-radius: 15px;
+}
+
+.element-todos{
+  background-color: rgb(255, 255, 255);
+  // width: 50%;
+  box-shadow: 0 0 30px;
+  right: 90%;
+  padding: 0 3px;
+  border-radius: 15px;
+}
+
+
+
+.feature-panel__img{
+  padding: auto;
+}
+/////////////formulario de inicio //////
+:root {
+  /* COLORS */
+  --white: #e9e9e9;
+  --gray: #333;
+  --blue: #0367a6;
+  --lightblue: #008997;
+
+  /* RADII */
+  --button-radius: 0.7rem;
+
+  /* SIZES */
+  --max-width: 758px;
+  --max-height: 420px;
+
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.nuevo_parche {
+  align-items: center;
+  background-color: var(--white);
+  background: url("https://firebasestorage.googleapis.com/v0/b/imagenes-final.appspot.com/o/orquidiorama.jpg?alt=media&token=86dd5341-1063-4507-94e8-9ac879631971");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  height: 100vh;
+  place-items: center;
+}
+.form-label {
+  margin-bottom: 0.5rem;
+  color: white;
+}
+.form-label .password .optional{
+  margin-bottom: 0.5rem;
+  color: rgb(0, 0, 0);
 }
