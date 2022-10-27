@@ -1,84 +1,85 @@
-  <div class="contenedor_detalles">
-    <%# <video controls="controls" loop="loop">
-      <source src="https://res.cloudinary.com/demo/video/upload/c_pad,du_10,h_360,q_70,w_480/dog.mp4" type="video/mp4" />
-    </video> %>
 
-    <% if @plan.photos.attached? %>
-      <% @plan.photos.each do |photo| %>
-          <%= image_tag(photo, :class => "photos") %>
-          <%#= cl_image_tag photo.key, class: "photos"%>
-      <% end %>
-    <% end %>
-    <p></p>
-    <h1 class="plan-title"><%= @plan.title %></h1>
-    <p><%= @plan.details %></p>
-    <div class="card-time">
-    <div class="show-plan">
-      <p>Fecha de inicio: <%= @plan.start_date.to_date %></p>
-      <p>Hora inicial: <%= @plan.start_hour.strftime("%H:%M") %></p>
-    </div>
+      <div class="contenedor_detalles">
+        <%# <video controls="controls" loop="loop">
+          <source src="https://res.cloudinary.com/demo/video/upload/c_pad,du_10,h_360,q_70,w_480/dog.mp4" type="video/mp4" />
+        </video> %>
 
-    <div class="show-plan">
-      <p>Fecha de final: <%= @plan.end_date.to_date %></p>
-      <p>Hora final: <%= @plan.end_hour.strftime("%H:%M") %></p>
-    </div>
-    </div>
-    <div class="show-plan">
-      <p>Lugar: <%= @plan.address %></p>
-      <p class="free btn "><% if @plan.free %>
-        <%= "Gratuito" %>
-      <% else %>
-        <%= "De pago" %>
-      <% end %></p>
-    </div>
-    <div class="show-plan">
-      <% if user_signed_in? %>
-        <%= link_to "Seleccionar ❤", plan_selected_plans_path(plan_id: @plan), data:{turbo_method: :post}, class: "btn btn-ghost" %>
-      <% else %>
-        <%= link_to "Seleccionar ❤", new_user_session_path, class: "btn btn-ghost" %>
-      <% end %>
-
-      <% if user_signed_in? %>
-        <% if current_user.id == @plan.user_id %>
-          <%= button_to "Delete", @plan, :method => :delete, class: "btn btn-ghost"  %>
-          <%= link_to "Edit", edit_plan_path(plan_id: @plan.id), class: "btn btn-ghost" %>
+        <% if @plan.photos.attached? %>
+          <% @plan.photos.each do |photo| %>
+              <%= image_tag(photo, :class => "photos") %>
+              <%#= cl_image_tag photo.key, class: "photos"%>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
+        <p></p>
+        <h1 class="plan-title"><%= @plan.title %></h1>
+        <p><%= @plan.details %></p>
+        <div class="card-time">
+        <div class="show-plan">
+          <p>Fecha de inicio: <%= @plan.start_date.to_date %></p>
+          <p>Hora inicial: <%= @plan.start_hour.strftime("%H:%M") %></p>
+        </div>
 
-  </div>
+        <div class="show-plan">
+          <p>Fecha de final: <%= @plan.end_date.to_date %></p>
+          <p>Hora final: <%= @plan.end_hour.strftime("%H:%M") %></p>
+        </div>
+        </div>
+        <div class="show-plan">
+          <p>Lugar: <%= @plan.address %></p>
+          <p class="free btn "><% if @plan.free %>
+            <%= "Gratuito" %>
+          <% else %>
+            <%= "De pago" %>
+          <% end %></p>
+        </div>
+        <div class="show-plan">
+          <% if user_signed_in? %>
+            <%= link_to "Seleccionar ❤", plan_selected_plans_path(plan_id: @plan), data:{turbo_method: :post}, class: "btn btn-ghost" %>
+          <% else %>
+            <%= link_to "Seleccionar ❤", new_user_session_path, class: "btn btn-ghost" %>
+          <% end %>
+
+          <% if user_signed_in? %>
+            <% if current_user.id == @plan.user_id %>
+              <%= button_to "Delete", @plan, :method => :delete, class: "btn btn-ghost"  %>
+              <%= link_to "Edit", edit_plan_path(plan_id: @plan.id), class: "btn btn-ghost" %>
+            <% end %>
+          <% end %>
+        </div>
+
+      </div>
 
 
 
 
-  <div class=" reviews ">
-    <h2 class="title-form"> ¡COMENTARIOS!</h2>
-    <ul class="list-group">
-      <div class="cuadro">
-        <% @plan.reviews.each do |review| %>
-          <div class="review ">
-            <li class="item_review"><%= review.comment %></li>
-            <p> <%= "⭐" * review.rating.to_i %> </p>
-            <% if user_signed_in? %>
-                <% if current_user.id == review.user_id %>
-                <%= button_to "Delete", review_path(review), class: "btn btn-ghost", :method => :delete %>
+      <div class=" reviews ">
+        <h2 class="title-form"> ¡COMENTARIOS!</h2>
+        <ul class="list-group">
+          <div class="cuadro">
+            <% @plan.reviews.each do |review| %>
+              <div class="review ">
+                <li class="item_review"><%= review.comment %></li>
+                <p> <%= "⭐" * review.rating.to_i %> </p>
+                <% if user_signed_in? %>
+                    <% if current_user.id == review.user_id %>
+                    <%= button_to "Delete", review_path(review), class: "btn btn-ghost", :method => :delete %>
+                    <% end %>
                 <% end %>
+              </div>
             <% end %>
           </div>
+        </ul>
+      </div>
+
+      <div class="formulario_review">
+        <% if user_signed_in? %>
+        <h2 class="title-form">¡DEJA TU COMENTARIO!</h2>
+            <%= simple_form_for([@plan, @review], data: { controller: "form-submit" }) do |f| %>
+              <%= f.input :comment, label: 'Haz tu comentario' %>
+              <%= f.input :rating, collection: (1..5).to_a, label: "Califica tu experiencia", input_html: {data: {controller: "star-rating", action: "click->form-submit#submit"}} %>
+              <%= f.submit "Submit", class: "btn btn-ghost"%>
+            <% end %>
+        <% else %>
+          <%= link_to "Deja tu comentario", new_user_session_path, class: "btn btn-ghost" %>
         <% end %>
       </div>
-    </ul>
-  </div>
-
-  <div class="formulario_review">
-    <% if user_signed_in? %>
-    <h2 class="title-form">¡DEJA TU COMENTARIO!</h2>
-        <%= simple_form_for([@plan, @review], data: { controller: "form-submit" }) do |f| %>
-          <%= f.input :comment, label: 'Haz tu comentario' %>
-          <%= f.input :rating, collection: (1..5).to_a, label: "Califica tu experiencia", input_html: {data: {controller: "star-rating", action: "click->form-submit#submit"}} %>
-          <%= f.submit "Submit", class: "btn btn-ghost"%>
-        <% end %>
-    <% else %>
-      <%= link_to "Deja tu comentario", new_user_session_path, class: "btn btn-ghost" %>
-    <% end %>
-  </div>
