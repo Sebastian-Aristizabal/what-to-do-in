@@ -31,7 +31,7 @@
         <% end %>
     </ul>
 
-      <div class="element col-9">
+      <div class="element col-9 mt-5">
 
         <div class="feature-panel feature-panel--right feature-panel--align-left feature-panel--no-desktop-overlay">
             <div class="feature-panel__media aos-init aos-animate">
@@ -39,7 +39,7 @@
 
 
                 <figure class="feature-panel__media-container o-figure"
-                    itemtype="http://schema.org/ImageObject">
+                    itemtype="http://schema.org/ImageObject" class="my-0">
                     <picture class="media media-image">
                         <img class="feature-panel__img"
                             srcset="https://firebasestorage.googleapis.com/v0/b/imagenes-final.appspot.com/o/tour-graffiti.jpg?alt=media&token=d90398ed-8fc8-421d-8f71-b5d84d1de828"
@@ -62,38 +62,39 @@
 
 
     </div>
-     <div class="element-todos col-9 ">
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="element-todos col-8 mt-5 ">
 
-        <div class="feature-panel feature-panel--right1 feature-panel--align-left feature-panel--no-desktop-overlay">
-            <div class="feature-panel__media1 aos-init aos-animate">
-
-
-
-                <figure class="feature-panel__media-container o-figure"
-                    itemtype="http://schema.org/ImageObject">
-                    <picture class="media media-image">
-                        <img class="feature-panel__img"
-                            srcset="https://firebasestorage.googleapis.com/v0/b/imagenes-final.appspot.com/o/noche.jpg?alt=media&token=cebe368c-fbab-400d-ac9f-96426c0be7ca"
-                            >
-                    </picture>
-                </figure>
+          <div class="feature-panel feature-panel--right1 feature-panel--align-left feature-panel--no-desktop-overlay">
+              <div>
 
 
-
-            </div>
-            <div class="feature-panel__content feature-panel__content--medium aos-init aos-animate">
-                <h3 class="feature-panel__title feature-panel__title--medium">Todos <b>los parches</b></h3>
-
-                <div class="feature-panel__content-inner">
-                    <p><span>Aqui encontraras los mejores parches </span><span>, en la ciudad de medellin.</span></p>
-                    <h6><%= link_to "Todos los parches", plans_path,class: "btn btn-ghost" %></h6>
-                </div>
-            </div>
-       </div>
+                  <figure
+                      itemtype="http://schema.org/ImageObject" class="my-0">
+                      <picture class="media media-image">
+                          <img class="feature-panel__img"
+                              srcset="https://firebasestorage.googleapis.com/v0/b/imagenes-final.appspot.com/o/noche.jpg?alt=media&token=cebe368c-fbab-400d-ac9f-96426c0be7ca"
+                              >
+                      </picture>
+                  </figure>
 
 
+
+              </div>
+              <div class="feature-panel__content feature-panel__content--medium aos-init aos-animate">
+                  <h3 class="feature-panel__title feature-panel__title--medium">Todos <b>los parches</b></h3>
+
+                  <div class="feature-panel__content-inner">
+                      <p><span>Aqui encontraras los mejores parches </span><span>, en la ciudad de medellin.</span></p>
+                      <h6><%= link_to "Todos los parches", plans_path,class: "btn btn-ghost" %></h6>
+                  </div>
+              </div>
+          </div>
+
+
+      </div>
     </div>
-
         <%# </li>
     <% end %>
  <%# </ul> %>

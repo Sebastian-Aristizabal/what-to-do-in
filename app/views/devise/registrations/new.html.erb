@@ -1,33 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign up</title>
-</head>
-<script>
-    const signInBtn = document.getElementById("signIn");
-    const signUpBtn = document.getElementById("signUp");
-    const fistForm = document.getElementById("form1");
-    const secondForm = document.getElementById("form2");
-    const container = document.querySelector(".container");
 
-    signInBtn.addEventListener("click", () => {
-        container.classList.remove("right-panel-active");
-    });
-
-    signUpBtn.addEventListener("click", () => {
-        container.classList.add("right-panel-active");
-    });
-
-    fistForm.addEventListener("submit", (e) => e.preventDefault());
-    secondForm.addEventListener("submit", (e) => e.preventDefault());
-
-</script>
-<body>
  <h2 class="title-form">Sign up</h2>
-              <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
+
+    <div class="card-log mb-3 mx-auto" style="max-width: 700px; width:800px !important">
+      <div class="row g-0">
+        <div class="col-md-6">
+          <img src="https://firebasestorage.googleapis.com/v0/b/imagenes-final.appspot.com/o/colte.jpg?alt=media&token=60c4a852-ab68-4cd6-936c-72827aabfdac" class="img-fluid rounded-start" alt="..." style="height: 100%;">
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
                 <%= f.error_notification %>
 
                 <div class="form-inputs">
@@ -56,6 +37,8 @@
                 <%= f.button :submit, "Sign up" %>
                 <%= render "devise/shared/links" %>
               <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
 
-</body>
-</html>

@@ -29,6 +29,7 @@ class PlansController < ApplicationController
 
   def new
     @plan = Plan.new
+    @footer = true
   end
 
   def create

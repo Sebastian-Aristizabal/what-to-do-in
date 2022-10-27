@@ -563,7 +563,7 @@ padding-right: 60px;
 }
 
 .feature-panel {
-  width: 100%;
+  width: 95%;
   max-width: 1280px;
   // padding-left: 15px;
   // padding-right: 15px;
@@ -571,7 +571,7 @@ padding-right: 60px;
   align-items: center;
   flex-wrap: nowrap;
   justify-content: center;
-  margin: 120px auto;
+  // margin: 120px auto;
 }
 .feature-panel--align-left .feature-panel__title {
   padding-left: 0;
@@ -620,29 +620,12 @@ padding-right: 60px;
   padding: auto;
 }
 /////////////formulario de inicio //////
-:root {
-  /* COLORS */
-  --white: #e9e9e9;
-  --gray: #333;
-  --blue: #0367a6;
-  --lightblue: #008997;
 
-  /* RADII */
-  --button-radius: 0.7rem;
 
-  /* SIZES */
-  --max-width: 758px;
-  --max-height: 420px;
-
-  font-size: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
-.nuevo_parche {
+.show-plan {
   align-items: center;
   background-color: var(--white);
-  background: url("https://firebasestorage.googleapis.com/v0/b/imagenes-final.appspot.com/o/orquidiorama.jpg?alt=media&token=86dd5341-1063-4507-94e8-9ac879631971");
+  background: url("https://firebasestorage.googleapis.com/v0/b/imagenes-final.appspot.com/o/fotos-medellin-destacada.jpg?alt=media&token=90ff8343-b613-49f2-b3fd-328b2e155109");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -653,9 +636,56 @@ padding-right: 60px;
 }
 .form-label {
   margin-bottom: 0.5rem;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 .form-label .password .optional{
   margin-bottom: 0.5rem;
   color: rgb(0, 0, 0);
+}
+
+#new_plan .form-label{
+  color: rgb(0, 0, 0);
+}
+.card-body {
+  flex: 1 1 auto;
+  padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+  color: var(--bs-card-color);
+  padding-left: 25px;
+  margin-top: 9px;
+}
+
+.card-body1 {
+  flex: 1 1 auto;
+  padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+  color: var(--bs-card-color);
+  padding-left: 25px;
+  margin-top: 9px;
+}
+
+.card-body2 {
+  flex: 1 1 auto;
+  padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+  color: var(--bs-card-color);
+  padding-left: 25px;
+  margin-top: 40px;
+  padding-right: 25px;
+}
+.card-log{
+  background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 400px;
+}
+
+.card-log1{
+  background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 1590px;
 }
