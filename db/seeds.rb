@@ -54,13 +54,13 @@ puts "terminando de crear usuarios"
 
 #categorias
 
-category_1 = Category.create!(name:"Cultural")
+category_1 = Category.create!(name:"Culturales")
 
-category_2 = Category.create!(name:"Ecologico")
+category_2 = Category.create!(name:"Ecologicos")
 
-category_3 = Category.create!(name:"Gastronomico")
+category_3 = Category.create!(name:"Gastronomicos")
 
-category_4 = Category.create!(name:"Party")
+category_4 = Category.create!(name:"Parties")
 
 puts "categorias creadas"
 

@@ -5,13 +5,13 @@ class PlansController < ApplicationController
   def index
     if params[:category_id]
       @category = Category.find(params[:category_id])
-      if @category.name == "Cultural"
+      if @category.name == "Culturales"
         @plans = Plan.where(category_id: @category.id)
-      elsif @category.name == "Ecologico"
+      elsif @category.name == "Ecologicos"
         @plans = Plan.where(category_id: @category.id)
-      elsif @category.name == "Gastronomico"
+      elsif @category.name == "Gastronomicos"
         @plans = Plan.where(category_id: @category.id)
-      elsif @category.name == "Party"
+      elsif @category.name == "Parties"
         @plans = Plan.where(category_id: @category.id)
       end
     elsif params[:user_id]

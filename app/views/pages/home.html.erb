@@ -128,35 +128,22 @@
       </div>
     </div>
 
-
-<div class="container">
-  <% @plans.each do |plan| %>
-    <div class="card m-2 p-2">
-      <% plan.selected_plans.each do |selected| %>
-        <hr>
-          <p>plan id: <%= selected.plan_id %></p>
-          <p>plan title: <%= selected.plan.title %></p>
-          <p>user id: <%= selected.user.id %></p>
-    <% end %>
-    </div>
-  <% end %>
-</div>
-
+  <div class="card m-2 p-2">
+     <p>plan id: <%= @selected_top1[0] %></p>
+     <% plan = @plans.find(@selected_top1[0]) %>
+        <h4><%= plan.title %></h4>
+        <h6><%= plan.category.name %></h6>
+        <h6><%#= user_id %></h6>
+        <h6><%= @selected_top1[1] %> personas quieren asistir</h6>
+  </div>
+  <h2>-------------------------------------</h2>
 <% @selected_top.each do |selected| %>
   <div class="card m-2 p-2">
-     <p>selected id: <%= selected[0] %></p>
-      <% selected[1].each do |s| %>
-        <%= s.user_id %>
-        <%= s.plan.title %>
-      <% end %>
-  </div>
-<% end %>
-
-<% @selected_top.each do |plan| %>
-  <div class="card m-2 p-2">
-     <p>plan id: <%= plan[0] %></p>
-        <%= plan[1][0].user_id %>
-        <%= plan[1][0].plan.title %>
-        <%= plan[1].length %>
+     <p>plan id: <%= selected[0] %></p>
+     <% plan = @plans.find(selected[0]) %>
+        <h4><%= plan.title %></h4>
+        <h6><%= plan.category.name %></h6>
+        <h6><%#= user_id %></h6>
+        <h6><%= selected[1] %> personas quieren asistir</h6>
   </div>
 <% end %>
