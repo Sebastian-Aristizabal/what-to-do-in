@@ -2,6 +2,7 @@ class SelectedPlansController < ApplicationController
   before_action :authenticate_user!
   def index
     @selected = SelectedPlan.where(user_id: current_user.id)
+    # @plans = Plan.find(params[:id])
   end
 
   def new

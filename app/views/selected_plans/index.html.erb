@@ -1,3 +1,10 @@
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to "Home", root_path %></li>
+    <li class="breadcrumb-item"><%#= link_to "Parches " + @selected.category.name, :back%></li>
+    <li class="breadcrumb-item active"><%#= @plan.title%></li>
+  </ol>
+</nav>
 <div class="container">
   <h2 class="title-form">MIS PARCHES SELECCIONADOS EN MEDELLIN</h2>
   <% @selected.each do |selected|%>
