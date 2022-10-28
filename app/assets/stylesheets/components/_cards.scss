@@ -689,7 +689,7 @@ padding-right: 60px;
   padding: 10px;
 }
 .row {
-  
+
   --bs-gutter-y: 0;
   display: flex;
   flex-wrap: wrap;
@@ -719,6 +719,8 @@ padding-right: 60px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  transition: .2s;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
 
 
 }
@@ -730,10 +732,12 @@ padding-right: 60px;
   display: block;
   height: 100%;
   position: relative;
+  transition: .2s;
 }
 .event-card.full {
   width: 50%;
   margin-bottom: 45px;
+  transition: .2s;
 }
 .event-card1 {
   height: auto !important;
@@ -744,5 +748,13 @@ padding-right: 60px;
   overflow: hidden;
   width: 310px;
   display: flex;
-  padding: 0
+  padding: 0;
+  transition: .2s;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+}
+.event-card.full:hover{
+  transform: scale(1.1);
+}
+.event-card1:hover{
+  transform: scale(1.1);
 }
