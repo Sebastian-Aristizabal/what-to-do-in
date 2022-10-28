@@ -8,13 +8,19 @@
 
 body {
   margin: 0;
-  font-family: Open Sans;
+  font-family: 'GT Walsheim Pro';
 
 }
 
 h1, h2, h3, h4 {
   font-family: 'GT Walsheim Pro';
   color: black;
+}
+.tipo-letra{
+  color: rgba(0,0,0,0);
+  text-shadow: 0 0 20px #2a6454;
+  -webkit-text-stroke: 0.5px white;
+
 }
 
 i{
