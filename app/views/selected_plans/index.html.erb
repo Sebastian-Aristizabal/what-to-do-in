@@ -1,20 +1,23 @@
-<div class="container">
-  <h2 class="title-form">MIS PARCHES SELECCIONADOS EN MEDELLIN</h2>
+<h2 class="title-form">MIS PARCHES SELECCIONADOS EN MEDELLIN</h2>
+<div class="cards">
   <% @selected.each do |selected|%>
-    <div class="card container">
-      <p> <strong>Title:</strong> <%= selected.plan.title %> </p>
-      <p> <strong>Id plan:</strong> <%= selected.plan_id %> </p>
-      <p> <strong>Id selected:</strong></strong> <%= selected.id %> </p>
-      <p> <strong>status:</strong> <%= selected.status %> </p>
-      <%= selected.user_id %>
-      <%= link_to "Ver ❤", plan_path(id: selected.plan_id), class: "btn btn-ghost" %>
-      <%= link_to "Eliminar",
-        selected_plan_path(selected),
-        class: "btn btn-ghost",
-        data: {turbo_method: :delete}
-      %>
-    </div>
-    <%# <%= link_to "Details", plan_path(plan) %>
+    <li class="cards__item">
+            <div class="card">
+                <div class="card__image card__image--record"></div>
+                <div class="card__content">
+                    <div class="card__title"></div>
+                     <p class="card__text">Parche: <i> <%= selected.plan.category.name  %> </i></p>
+                     <p class="card__text">Parche: <i> <%= selected.plan.title  %> </i></p>
+                     <p class="card__text">status: <i> <%= selected.status %></i></p>
+                    <%= link_to "Ver ❤", plan_path(id: selected.plan_id), class: "btn btn-ghost" %>
+                    <%= link_to "Eliminar",
+                      selected_plan_path(selected),
+                      class: "btn btn-ghost",
+                      data: {turbo_method: :delete}
+                    %>
+                </div>
+            </div>
+        </li>
   <% end %>
 
 </div>
