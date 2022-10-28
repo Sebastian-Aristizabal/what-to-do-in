@@ -1,11 +1,11 @@
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to "Home", root_path %></li>
+    <li class="breadcrumb-item active">Parches <%=@category.nil? ? "" : @category.name %></h2></li>
+  </ol>
+</nav>
 
-
-
-
-
-
-
-<h2 class="title-form">PARCHES</h2>
+<h2 class="title-form">PARCHES <%=@category.nil? ? "" : @category.name %></h2>
 <ul class="cards">
     <% @plans.each do |plan| %>
          <li class="cards__item">

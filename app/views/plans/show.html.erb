@@ -1,9 +1,14 @@
-
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><%= link_to "Home", root_path %></li>
+            <li class="breadcrumb-item"><%= link_to "Parches " + @plan.category.name, :back%></li>
+            <li class="breadcrumb-item active"><%= @plan.title%></li>
+          </ol>
+        </nav>
       <div class="contenedor_detalles">
         <%# <video controls="controls" loop="loop">
           <source src="https://res.cloudinary.com/demo/video/upload/c_pad,du_10,h_360,q_70,w_480/dog.mp4" type="video/mp4" />
         </video> %>
-
         <% if @plan.photos.attached? %>
           <% @plan.photos.each do |photo| %>
               <%= image_tag(photo, :class => "photos") %>
