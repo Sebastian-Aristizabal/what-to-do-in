@@ -546,7 +546,7 @@ img {
 }
 
 .content.center-column h1 {
-  color: rgb(0, 0, 0);
+  // color: rgb(0, 0, 0);
   font-style: oblique;
   font-weight: 800;
   font-size: 46px;
@@ -708,4 +708,41 @@ padding-right: 60px;
   margin-right: calc(-.5 * var(--bs-gutter-x));
   margin-left: calc(-.5 * var(--bs-gutter-x));
   padding-right: 26px;
+}
+/////////////// cards parches mas visitados///////
+.event-card {
+
+  height: auto !important;
+  background-color: white;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+
+}
+.event-card-in {
+  background: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  border-radius: 20px;
+  overflow: hidden;
+  display: block;
+  height: 100%;
+  position: relative;
+}
+.event-card.full {
+  width: 50%;
+  margin-bottom: 45px;
+}
+.event-card1 {
+  height: auto !important;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 310px;
+  display: flex;
+  padding: 0 
 }
