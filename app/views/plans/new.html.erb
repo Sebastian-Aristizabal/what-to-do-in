@@ -35,7 +35,10 @@
               </div>
             </div>
 
-            <%= f.input :address %>
+            <%= f.input :address,
+  input_html: {data: {address_autocomplete_target: "address"}},
+  wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAP_BOX_KEY"]}}
+%>
             <%= f.input :link_web %>
             <%= f.input :instagram_link %>
             <%= f.input :facebook_link %>

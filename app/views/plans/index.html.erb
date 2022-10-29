@@ -16,7 +16,14 @@
                      <p class="card__text">Parche: <i> <%= plan.category.name %> </i></p>
                     <%= link_to "detalles del parche", plan_path(plan),class:"btn btn--block card__btn" %>
                 </div>
-            </div>
-        </li>
-    <% end %>
-</ul>
+            </li>
+        <% end %>
+    </ul>
+  </div>
+  <div id="map">
+    <div style="width: 100%; height: 600px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAP_BOX_KEY'] %>"></div>
+  </div>
+</div>

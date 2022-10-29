@@ -51,7 +51,13 @@
             <% end %>
           <% end %>
         </div>
-
+          <div id="map">
+            <div style="width: 40%; height: 600px;"
+              data-controller="map"
+              data-map-markers-value="<%= @markers.to_json %>"
+              data-map-api-key-value="<%= ENV['MAP_BOX_KEY'] %>"></div>
+            </div>
+          </div>
       </div>
 
 

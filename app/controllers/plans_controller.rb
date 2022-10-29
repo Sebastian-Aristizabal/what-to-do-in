@@ -21,10 +21,25 @@ class PlansController < ApplicationController
     else
       @plans = Plan.all
     end
+
+    @markers = @plans.geocoded.map do |plan|
+      {
+        lat: plan.latitude,
+        lng: plan.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {plan: plan})
+      }
+    end
   end
 
   def show
-  @review = Review.new
+    @review = Review.new
+    @markers = @plan.geocode.map do |plan|
+      {
+        lat: @plan.latitude,
+        lng: @plan.longitude,
+        info_window: render_to_string(partial: "info_window2", locals: {plan: plan})
+      }
+    end
   end
 
   def new
