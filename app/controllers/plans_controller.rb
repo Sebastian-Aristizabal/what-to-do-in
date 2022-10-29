@@ -37,7 +37,7 @@ class PlansController < ApplicationController
       {
         lat: @plan.latitude,
         lng: @plan.longitude,
-        # info_window: render_to_string(partial: "info_window", locals: {plan: plan})
+        info_window: render_to_string(partial: "info_window2", locals: {plan: plan})
       }
     end
   end
