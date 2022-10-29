@@ -1,7 +1,8 @@
 class SelectedPlansController < ApplicationController
   before_action :authenticate_user!
   def index
-    @selected = SelectedPlan.all
+    @selected = SelectedPlan.where(user_id: current_user.id)
+    # @plans = Plan.find(params[:id])
   end
 
   def new
@@ -10,16 +11,14 @@ class SelectedPlansController < ApplicationController
   end
 
   def create
-    if SelectedPlan.exists?(:plan_id => params[:plan_id])
+    @plan = Plan.find(params[:plan_id])
+    @selected = SelectedPlan.new
+    @selected.plan_id = @plan.id
+    @selected.user_id = current_user.id
+    if SelectedPlan.exists?(:plan_id => params[:plan_id], :user_id => @selected.user_id )
       redirect_to selected_plans_path
     elsif
-      @plan = Plan.find(params[:plan_id])
-      @selected = SelectedPlan.new
-      # @selected = SelectedPlan.new(user_id: current_user.id, plan_id: 7, status: "hola")
-      @selected.plan_id = @plan.id
-      @selected.user_id = current_user.id
       # @plan = Plan.find(params[:plan_id])
-      # @selected.plan_id = @plan.id
       if @selected.save
         redirect_to selected_plans_path
       else

@@ -7,34 +7,50 @@
 
 body {
   margin: 0;
-  font-family: Open Sans;
+  font-family: 'GT Walsheim Pro';
+
 }
 
 h1, h2, h3, h4 {
-  font-family: Poppins;
+  font-family: 'GT Walsheim Pro';
   color: black;
+}
+.tipo-letra{
+  color: rgba(0,0,0,0);
+  text-shadow: 0 0 20px #2a6454;
+  -webkit-text-stroke: 0.5px white;
+
 }
 
 i{
-  color: aqua;
+  color: rgb(0, 0, 0);
 }
 
 a {
   text-decoration: none;
+  font-family: 'GT Walsheim Pro';
+
+}
+.text-justify{
+  color: rgb(255, 255, 255);
+}
+.copyright-text{
+  color: rgb(255, 255, 255);
+}
+p{
+  font-family: 'GT Walsheim Pro';
+  color: rgb(0, 0, 0);
+
 }
 
-p{
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: black;
-  font-size: large;
+.letra_baner{
+  font-family: 'GT Walsheim Pro';
+  color: rgb(0, 0, 0);
 }
-/*.cuadrado{
-  width: 200px;
-  height: 200px;
-  margin-bottom: 20px;
-}*/
+
 
 .title-form{
   font-family: Poppins;
   text-align: center;
 }
+///////////////////////////////////////// diseño formulario

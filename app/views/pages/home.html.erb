@@ -1,24 +1,149 @@
-<h2 class="title-form">¡PARCHESE EN MEDELLIN!</h2>
-<%#= raise %>
- <div class="parches">
-    <h6><%= link_to "Todos los parches", plans_path,class: "btn btn-ghost" %></h6>
-  </div>
-  <div class="Nparches">
-    <h6><%= link_to "Nuevo parche", new_plan_path, class: "btn btn-ghost" %></h6>
-  </div>
-<ul class="cards1">
-    <% @category.each do |category| %>
-        <li class="cards__item">
-            <div class="card">
-                <div class="card__image card__image--record"></div>
-                <div class="card__content">
-                    <div class="title-form1"><%= category.name %></div>
 
-                    <%= link_to "Parches", plans_path(category_id: category.id),class:"btn btn--block card__btn"%>
-                </div>
+
+  <div class="banner">
+        <div class="container">
+          <div class="content center-column">
+            <h1 class="tipo-letra">¡QueHayPaHacer en Medellin!</h1>
+
+          </div>
+        </div>
+
+        <div class="video-container">
+           <video loop playsinline autoplay muted>
+           <source src="https://firebasestorage.googleapis.com/v0/b/imagenes-final.appspot.com/o/Medellin%20Colombia%20Desde%20los%20Cielos.mp4?alt=media&token=0d845b13-5b6c-463d-b4aa-f695cc7c5ed7" type="video/mp4">
+
+          </video>
+        </div>
+  </div>
+    <h2 class="title-form">¡lo mas visitado!</h2>
+    <div class="citi-event-list one-third flex m-auto" style="width:80%">
+            <div class=" m-auto event-card full">
+
+                    <div class="event-card-img">
+                        <img src="https://res.cloudinary.com/dxeoaqn7j/image/upload/v1667070884/proyecto2/pe%C3%B1ol_jnqa9n.avif">
+                    </div>
+                    <div class="event-card-content">
+                        <center><h2> name</h2></center> <h6><%= link_to "ir al parche", new_plan_path, class: "btn btn-ghost" %></h6>
+
+                    </div>
+
             </div>
-        </li>
+    </div>
+    <div class="event-card1">
+
+                    <div class="event-card-img">
+                        <img src="https://s38939.pcdn.co/wp-content/themes/hello-theme-child-master/aws/img/home-city-02.webp">
+                    </div>
+                    <div class="event-card-content">
+                        <center><h2> name</h2></center>
+                        <h6><%= link_to "ir al parche", new_plan_path, class: "btn btn-ghost" %></h6>
+                    </div>
+
+    </div>
 
 
-    <% end %>
- </ul>
+
+    <h2 class="title-form">¡PARCHESE EN MEDELLIN!</h2>
+    <ul class="cards1">
+        <% @category.each do |category| %>
+            <li class="cards__item">
+                <div class="card">
+                    <div class="card__image card__image--record"></div>
+                    <div class="card__content">
+                        <div class="title-form1"><%= category.name %></div>
+
+                        <%= link_to "Parches", plans_path(category_id: category.id),class:"btn btn--block card__btn"%>
+                    </div>
+                </div>
+            </li>
+        <% end %>
+    </ul>
+      <div class="row2" style="padding-left: 20px;">
+        <div class="col-8"></div>
+        <div class="element col-8 mt-5">
+
+          <div class="feature-panel feature-panel--right feature-panel--align-left feature-panel--no-desktop-overlay">
+
+
+
+
+
+
+
+
+
+              <div class="feature-panel__content feature-panel__content--medium aos-init aos-animate">
+                  <h3 class="feature-panel__title feature-panel__title--medium">Quieres publicar tu parche?</h3>
+
+                  <div class="feature-panel__content-inner">
+                      <p><span>Tu puedes publicar tu parche</span><span>, en la ciudad de Medellin..</span></p>
+                      <h6><%= link_to "Nuevo parche", new_plan_path, class: "btn btn-ghost" %></h6>
+                  </div>
+              </div>
+                <figure
+                      itemtype="http://schema.org/ImageObject" class="my-0">
+                      <picture class="media media-image">
+                          <img class="feature-panel__img1"
+                              srcset="https://res.cloudinary.com/agr230316/image/upload/v1667070021/development/nuevo_parche_card_hpdhrl.jpg"
+                              >
+                      </picture>
+                  </figure>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row1">
+      <div class="col-4"></div>
+      <div class="element-todos col-8 mt-5 ">
+
+          <div class="feature-panel feature-panel--right1 feature-panel--align-left feature-panel--no-desktop-overlay">
+              <div>
+
+
+                  <figure
+                      itemtype="http://schema.org/ImageObject" class="my-0">
+                      <picture class="media media-image">
+                          <img class="feature-panel__img12"
+                              srcset="https://res.cloudinary.com/agr230316/image/upload/v1667070022/development/todos_los_parches_exokfh.jpg"
+                              >
+                      </picture>
+                  </figure>
+
+
+
+              </div>
+              <div class="feature-panel__content feature-panel__content--medium aos-init aos-animate">
+                  <h3 class="feature-panel__title feature-panel__title--medium">Todos los parches</h3>
+
+                  <div class="feature-panel__content-inner">
+                      <p><span>Aqui encontraras los mejores parches </span><span>, en la ciudad de medellin.</span></p>
+                      <h6><%= link_to "Todos los parches", plans_path,class: "btn btn-ghost" %></h6>
+                  </div>
+              </div>
+          </div>
+
+
+      </div>
+    </div>
+
+  <div class="card m-2 p-2">
+     <p>plan id: <%= @selected_top1[0] %></p>
+     <% plan = @plans.find(@selected_top1[0]) %>
+        <h4><%= plan.title %></h4>
+        <h6><%= plan.category.name %></h6>
+        <h6><%#= user_id %></h6>
+        <h6><%= @selected_top1[1] %> personas quieren asistir</h6>
+  </div>
+  <h2>-------------------------------------</h2>
+<% @selected_top.each do |selected| %>
+  <div class="card m-2 p-2">
+     <p>plan id: <%= selected[0] %></p>
+     <% plan = @plans.find(selected[0]) %>
+        <h4><%= plan.title %></h4>
+        <h6><%= plan.category.name %></h6>
+        <h6><%#= user_id %></h6>
+        <h6><%= selected[1] %> personas quieren asistir</h6>
+  </div>
+<% end %>

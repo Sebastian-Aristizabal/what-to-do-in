@@ -26,25 +26,20 @@ class Plan < ApplicationRecord
 
    def date_invalid
       if self.start_date.present? && self.start_date < Date.today
-        self.errors.add(:start_date, "la fecha inicial no puede ser menor a la fecha actual")
+        self.errors.add(:start_date, "la fecha inicial no puede ser menor a la fecha actual \n")
       end
       if self.end_date < self.start_date
-        self.errors.add(:start_date, "la fecha inicial no puede ser mayor a la fecha final")
+        self.errors.add(:end_date, "la fecha inicial no puede ser mayor a la fecha final \n")
       end
     end
 
   def hour_invalid
-    if self.start_hour.present? && self.start_hour > Time.now
-      self.errors.add(:start_hour, "la hora inicial no puede ser menor a la hora actual")
-    end
-    if self.end_hour < self.start_hour && self.end_date == start_date
-      self.errors.add(:start_hour, "la hora inicial no puede ser mayor a la hora final")
+    unless start_date != end_date
+      if self.start_hour.present?
+        if (self.start_hour < Time.now) && (self.start_date <= Date.today)
+          self.errors.add(:start_hour, "la hora inicial no puede ser menor a la hora actual \n")
+        end
+      end
     end
   end
 end
-
-# t.datetime "start_date", precision: nil
-# t.datetime "end_date", precision: nil
-# t.datetime "start_hour", precision: nil
-# t.datetime "end_hour", precision: nil
-# self.end_date < self.start_date && self.start_hour < Date.today
