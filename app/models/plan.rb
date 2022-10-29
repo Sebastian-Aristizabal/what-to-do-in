@@ -20,6 +20,10 @@ class Plan < ApplicationRecord
   using: {
     tsearch: { prefix: true } # <-- now `superman batm` will return something!
   }
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
    def date_invalid
       if self.start_date.present? && self.start_date < Date.today
         self.errors.add(:start_date, "la fecha inicial no puede ser menor a la fecha actual")

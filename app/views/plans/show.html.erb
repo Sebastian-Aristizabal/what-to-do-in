@@ -1,3 +1,4 @@
+<div id="show-map">
   <div class="contenedor_detalles">
     <%# <video controls="controls" loop="loop">
       <source src="https://res.cloudinary.com/demo/video/upload/c_pad,du_10,h_360,q_70,w_480/dog.mp4" type="video/mp4" />
@@ -16,7 +17,7 @@
       <p>Fecha de inicio: <%= @plan.start_date.to_date %></p>
       <p>Hora inicial: <%= @plan.start_hour.strftime("%H:%M") %></p>
     </div>
-    
+
     <div class="show-plan">
       <p>Fecha de final: <%= @plan.end_date.to_date %></p>
       <p>Hora final: <%= @plan.end_hour.strftime("%H:%M") %></p>
@@ -44,9 +45,15 @@
         <% end %>
       <% end %>
     </div>
-
   </div>
-
+  <div id="map">
+    <div style="width: 40%; height: 600px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAP_BOX_KEY'] %>"></div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -65,7 +72,6 @@
             <% end %>
           </div>
         <% end %>
-      </div>
     </ul>
   </div>
 
