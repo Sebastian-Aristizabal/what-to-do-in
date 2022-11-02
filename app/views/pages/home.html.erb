@@ -23,7 +23,11 @@
                         <img src="https://res.cloudinary.com/dxeoaqn7j/image/upload/v1667070884/proyecto2/pe%C3%B1ol_jnqa9n.avif">
                     </div>
                     <div class="event-card-content">
-                        <center><h2> name</h2></center> <h6><%= link_to "ir al parche", new_plan_path, class: "btn btn-ghost" %></h6>
+                        <% plan = @plans.find(@selected_top1[0]) %>
+                            <h4><%= plan.title %></h4>
+                            <h6><%= plan.category.name %></h6>
+                            <h6><%#= user_id %></h6>
+                            <h6><%= @selected_top1[1] %> personas quieren asistir</h6><h6><%= link_to "ir al parche", new_plan_path, class: "btn btn-ghost" %></h6>
 
                     </div>
 
@@ -111,8 +115,9 @@
                       itemtype="http://schema.org/ImageObject" class="my-0">
                       <picture class="media media-image">
                           <img class="feature-panel__img12"
-                              >
+
                               srcset="https://res.cloudinary.com/agr230316/image/upload/v1667070022/development/todos_los_parches_exokfh.jpg"
+                              >
                       </picture>
                   </figure>
 
