@@ -22,11 +22,24 @@ class PlansController < ApplicationController
       @plans = Plan.all
     end
 
+
     @markers = @plans.geocoded.map do |plan|
+      if plan.category
+        if plan.category.name == "Culturales"
+          marker_image = "3.png"
+        elsif plan.category.name == "Ecologicos"
+          marker_image = "2.png"
+        elsif plan.category.name == "Gastronomicos"
+          marker_image = "4.png"
+        elsif plan.category.name == "Parties"
+          marker_image = "1.png"
+        end
+      end
       {
         lat: plan.latitude,
         lng: plan.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {plan: plan})
+        info_window: render_to_string(partial: "info_window", locals: {plan: plan}),
+        image_url: helpers.asset_url(marker_image)
       }
     end
   end
@@ -34,10 +47,22 @@ class PlansController < ApplicationController
   def show
     @review = Review.new
     @markers = @plan.geocode.map do |plan|
+      if @plan.category
+        if @plan.category.name == "Culturales"
+          marker_image = "3.png"
+        elsif @plan.category.name == "Ecologicos"
+          marker_image = "2.png"
+        elsif @plan.category.name == "Gastronomicos"
+          marker_image = "4.png"
+        elsif @plan.category.name == "Parties"
+          marker_image = "1.png"
+        end
+      end
       {
         lat: @plan.latitude,
         lng: @plan.longitude,
-        info_window: render_to_string(partial: "info_window2", locals: {plan: plan})
+        info_window: render_to_string(partial: "info_window2", locals: {plan: plan}),
+        image_url: helpers.asset_url(marker_image)
       }
     end
   end
