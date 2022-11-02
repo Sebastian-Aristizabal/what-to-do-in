@@ -291,16 +291,16 @@ img {
     }
 }
 
-.card__image::before {
-    content: "";
-    display: block;
-    padding-top: 56.25%;
-}
+// .card__image::before {
+//     content: "";
+//     display: block;
+//     padding-top: 56.25%;
+// }
 
 
-.card__image--record {
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/imagenes-final.appspot.com/o/downtown-medellin-colombia.webp?alt=media&token=37081033-31cf-4bf6-a877-20b555ae2190);
-}
+// .card__image--record {
+//     background-image: url(https://firebasestorage.googleapis.com/v0/b/imagenes-final.appspot.com/o/downtown-medellin-colombia.webp?alt=media&token=37081033-31cf-4bf6-a877-20b555ae2190);
+// }
 
 .mapa_fake{
   width: 40%;

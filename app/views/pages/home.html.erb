@@ -48,7 +48,12 @@
         <% @category.each do |category| %>
             <li class="cards__item">
                 <div class="card">
-                    <div class="card__image card__image--record"></div>
+                    <div class="card__image card__image--record">
+                    <% if category.photos.attached? %>
+                      <% category.photos.each do |photo| %>
+                         <%= image_tag(photo, :class => "photos") %>
+                      <% end %>
+                    <% end %></div>
                     <div class="card__content">
                         <div class="title-form1"><%= category.name %></div>
 

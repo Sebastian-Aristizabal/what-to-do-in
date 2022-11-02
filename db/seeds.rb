@@ -55,12 +55,24 @@ puts "terminando de crear usuarios"
 #categorias
 
 category_1 = Category.create!(name:"Culturales")
+photo_1 = URI.open("https://res.cloudinary.com/agr230316/image/upload/v1667070021/development/cultural_zp3exf.jpg")
+category_1.photos.attach(io: photo_1, filename:"photo_culturales.png", content_type: "image/png")
+category_1.save!
 
 category_2 = Category.create!(name:"Ecologicos")
+photo_2 = URI.open("https://res.cloudinary.com/agr230316/image/upload/v1667070021/development/ecologico_xfhrl3.jpg")
+category_2.photos.attach(io: photo_2, filename:"photo_ecologicos.png", content_type: "image/png")
+category_2.save!
 
 category_3 = Category.create!(name:"Gastronomicos")
+photo_3 = URI.open("https://res.cloudinary.com/agr230316/image/upload/v1667070022/development/gastronomico_sa7eup.jpg")
+category_3.photos.attach(io: photo_3, filename:"photo_gastronomicos.png", content_type: "image/png")
+category_3.save!
 
 category_4 = Category.create!(name:"Parties")
+photo_4 = URI.open("https://res.cloudinary.com/agr230316/image/upload/v1667070022/development/fiesta_oolk0v.jpg")
+category_4.photos.attach(io: photo_4, filename:"photo_parties.png", content_type: "image/png")
+category_4.save!
 
 puts "categorias creadas"
 
