@@ -34,7 +34,7 @@
                 <%= f.input :end_hour, as: :time, html5: true %>
               </div>
               <div class="col-6">
-                <%= f.input :photos, as: :file %>
+                <%= f.input :photos, as: :file, input_html: { multiple: true } %>
               </div>
             </div>
 
