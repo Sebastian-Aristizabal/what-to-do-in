@@ -803,6 +803,9 @@ padding-right: 60px;
     flex-direction: column;
     overflow: hidden;
     transition: .2s;
-    width: 150%;
+    width: 40%;
     height: 100%;
+}
+.carda:hover{
+  transform: scale(1.1);
 }

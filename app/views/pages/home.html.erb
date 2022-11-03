@@ -29,18 +29,20 @@
             </div>
 
     <div class="event-card1">
-
-                    <div class="event-card-img">
-                        <img src="https://s38939.pcdn.co/wp-content/themes/hello-theme-child-master/aws/img/home-city-02.webp">
-                    </div>
                     <div class="event-card-content">
-                        <center><h2> name</h2></center>
-                        <h6><%= link_to "ir al parche", new_plan_path, class: "btn btn-ghost" %></h6>
+                      <% @selected_top.each do |selected| %>
+
+                          <%= image_tag(plan.photos.last) %>
+                          <% plan = @plans.find(selected[0]) %>
+                              <h4><%= plan.title %></h4>
+                              <h6><%= plan.category.name %></h6>
+                              <h6><%#= user_id %></h6>
+                              <h6><%= selected[1] %> personas quieren asistir</h6> <h6><%= link_to "ir al parche", new_plan_path, class: "btn btn-ghost" %></h6>
+                        
+                      <% end %>
                     </div>
 
     </div>
-
-
 
     <h2 class="title-form">¡Parchese en Medellín!</h2>
     <ul class="cards1">
