@@ -3,7 +3,7 @@
   <div class="banner">
         <div class="container">
           <div class="content center-column">
-            <h1 class="tipo-letra">¡QueHayPaHacer en Medellin!</h1>
+            <h1 class="tipo-letra">¡QuéHayPa'Hacer en Medellín!</h1>
 
           </div>
         </div>
@@ -15,24 +15,19 @@
           </video>
         </div>
   </div>
-    <h2 class="title-form">¡lo mas visitado!</h2>
-    <div class="citi-event-list one-third flex m-auto" style="width:80%">
-            <div class=" m-auto event-card full">
+    <h2 class="title-form">¡lo más visitado!</h2>
 
-                    <div class="event-card-img">
-                        <img src="https://res.cloudinary.com/dxeoaqn7j/image/upload/v1667070884/proyecto2/pe%C3%B1ol_jnqa9n.avif">
-                    </div>
-                    <div class="event-card-content">
-                        <% plan = @plans.find(@selected_top1[0]) %>
-                            <h4><%= plan.title %></h4>
-                            <h6><%= plan.category.name %></h6>
-                            <h6><%#= user_id %></h6>
-                            <h6><%= @selected_top1[1] %> personas quieren asistir</h6><h6><%= link_to "ir al parche", new_plan_path, class: "btn btn-ghost" %></h6>
 
-                    </div>
-
+            <div class="carda m-auto" >
+              <div class="card-body" >
+                <% plan = @plans.find(@selected_top1[0]) %>
+                              <%= image_tag(plan.photos.last) %>
+                              <h4><%= plan.title %></h4>
+                              <h6><%= plan.category.name %></h6>
+                              <h6><%= @selected_top1[1] %> personas quieren asistir</h6><h6><%= link_to "ir al parche", new_plan_path, class: "btn btn-ghost" %></h6>
+              </div>
             </div>
-    </div>
+
     <div class="event-card1">
 
                     <div class="event-card-img">
@@ -47,7 +42,7 @@
 
 
 
-    <h2 class="title-form">¡PARCHESE EN MEDELLIN!</h2>
+    <h2 class="title-form">¡Parchese en Medellín!</h2>
     <ul class="cards1">
         <% @category.each do |category| %>
             <li class="cards__item">
@@ -82,10 +77,10 @@
 
 
               <div class="feature-panel__content feature-panel__content--medium aos-init aos-animate">
-                  <h3 class="feature-panel__title feature-panel__title--medium">Quieres publicar tu parche?</h3>
+                  <h3 class="feature-panel__title feature-panel__title--medium">¿Quieres crear tu propio parche?</h3>
 
                   <div class="feature-panel__content-inner">
-                      <p><span>Tu puedes publicar tu parche</span><span>, en la ciudad de Medellin..</span></p>
+                      <p><span>Acá puedes publicar tu parche en la ciudad de Medellin..</span></p>
                       <h6><%= link_to "Nuevo parche", new_plan_path, class: "btn btn-ghost" %></h6>
                   </div>
               </div>
@@ -128,7 +123,7 @@
                   <h3 class="feature-panel__title feature-panel__title--medium">Todos los parches</h3>
 
                   <div class="feature-panel__content-inner">
-                      <p><span>Aqui encontraras los mejores parches </span><span>, en la ciudad de medellin.</span></p>
+                      <p><span>Acá encontrarás los mejores parches en la ciudad de Medellín</span></p>
                       <h6><%= link_to "Todos los parches", plans_path,class: "btn btn-ghost" %></h6>
                   </div>
               </div>

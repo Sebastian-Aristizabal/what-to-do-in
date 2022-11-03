@@ -715,19 +715,38 @@ padding-right: 60px;
 
 }
 /////////////// cards parches mas visitados///////
+///
+.event-card-content{
+  margin: auto;
+  padding: 0%;
+  width: 100%;
+  height: 100%;
+}
 .event-card {
 
-  height: auto !important;
+  // height: auto !important;
   background-color: white;
   border-radius: 20px;
 
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  // overflow: hidden;
   transition: .2s;
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  width: 50%;
+  height: 40%;
 
 
+}
+
+.contendor{
+  height: 100px;
+}
+
+.event-card-img{
+  width: 100%;
+  border-radius: 20px;
+  height: 50%;
 }
 .event-card-in {
   background: #FFFFFF;
@@ -741,11 +760,12 @@ padding-right: 60px;
 }
 .event-card.full {
   width: 50%;
+  height: 75%;
   margin-bottom: 45px;
   transition: .2s;
 }
 .event-card1 {
-  height: auto !important;
+  // height: auto !important;
   background-color: white;
   border-radius: 20px;
   display: flex;
@@ -773,4 +793,16 @@ padding-right: 60px;
   height: auto;
   object-fit: fill;
   padding: 10px;
+}
+
+.carda{
+  background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: .2s;
+    width: 150%;
+    height: 100%;
 }
