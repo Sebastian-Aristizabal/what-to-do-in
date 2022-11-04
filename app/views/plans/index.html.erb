@@ -10,11 +10,18 @@
     <% @plans.each do |plan| %>
          <li class="cards__item">
             <div class="card">
-                <div class="card__image card__image--record"></div>
+                <div class="card__image card__image--record">
+                <% if plan.photos.attached? %>
+                  <% plan.photos.each do |photo| %>
+                    <%= image_tag(photo, :class => "photos") %>
+                  <% end %>
+                <% end %>
+
+                </div>
                 <div class="card__content">
                     <div class="card__title"><%= plan.title %></div>
                      <p class="card__text">Parche: <i> <%= plan.category.name %> </i></p>
-                    <%= link_to "detalles del parche", plan_path(plan),class:"btn btn--block card__btn" %>
+                    <%= link_to "Más sobre este parche", plan_path(plan),class:"btn btn--block card__btn" %>
                 </div>
             </li>
         <% end %>

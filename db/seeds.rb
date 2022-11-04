@@ -55,12 +55,24 @@ puts "terminando de crear usuarios"
 #categorias
 
 category_1 = Category.create!(name:"Culturales")
+photo_1 = URI.open("https://res.cloudinary.com/agr230316/image/upload/v1667070021/development/cultural_zp3exf.jpg")
+category_1.photos.attach(io: photo_1, filename:"photo_culturales.png", content_type: "image/png")
+category_1.save!
 
 category_2 = Category.create!(name:"Ecologicos")
+photo_2 = URI.open("https://res.cloudinary.com/agr230316/image/upload/v1667070021/development/ecologico_xfhrl3.jpg")
+category_2.photos.attach(io: photo_2, filename:"photo_ecologicos.png", content_type: "image/png")
+category_2.save!
 
 category_3 = Category.create!(name:"Gastronomicos")
+photo_3 = URI.open("https://res.cloudinary.com/agr230316/image/upload/v1667070022/development/gastronomico_sa7eup.jpg")
+category_3.photos.attach(io: photo_3, filename:"photo_gastronomicos.png", content_type: "image/png")
+category_3.save!
 
 category_4 = Category.create!(name:"Parties")
+photo_4 = URI.open("https://res.cloudinary.com/agr230316/image/upload/v1667070022/development/fiesta_oolk0v.jpg")
+category_4.photos.attach(io: photo_4, filename:"photo_parties.png", content_type: "image/png")
+category_4.save!
 
 puts "categorias creadas"
 
@@ -83,7 +95,7 @@ plan_3.photos.attach(io: photo_3, filename:"photo_arvi.png", content_type: "imag
 plan_3.save!
 
 plan_4 = Plan.new(title:"Lago Normandia", video_url:"", details:"Un recorrido lleno de historia, naturaleza y mucha agua, caminaremos por senderos veredales, contemplando el paisaje rural de nuestras montañas antioqueñas", start_date: Date.today, end_date:5.days.from_now, start_hour:"2022-10-23 00:00:00", end_hour:"2022-10-23 23:59:59", address:"El retiro - Envigado", link_web:"", instagram_link:"https://www.instagram.com/viajeapie_", facebook_link: "", free: true,  category_id: category_2.id, user_id: user_2.id)
-photo_4 = URI.open("https://orientemap.com/wp-content/uploads/Retiro_CascadaNormandia_1.jpg")
+photo_4 = URI.open("https://cdn.baquianos.com/img/blog/2019/29/humedales5-2ftx640.jpg")
 plan_4.photos.attach(io: photo_4, filename:"photo_normadia.png", content_type: "image/png")
 plan_4.save!
 
