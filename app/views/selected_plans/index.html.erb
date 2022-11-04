@@ -7,12 +7,18 @@
   </ol>
 </nav>
 
-<h2 class="title-form">MIS PARCHES SELECCIONADOS EN MEDELLIN</h2>
+<h2 class="title-form">MIS PARCHES SELECCIONADOS</h2>
 <div class="cards">
   <% @selected.each do |selected|%>
     <li class="cards__item">
             <div class="card">
-                <div class="card__image card__image--record"></div>
+                <div class="card__image card__image--record">
+                  <% if selected.plan.photos.attached? %>
+                  <% selected.plan.photos.each do |photo| %>
+                    <%= image_tag(photo, :class => "photos") %>
+                  <% end %>
+                <% end %>
+                </div>
                 <div class="card__content">
                     <div class="card__title"></div>
                      <p class="card__text">Parche: <i> <%= selected.plan.category.name  %> </i></p>
