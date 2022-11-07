@@ -2,7 +2,6 @@ import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
 
-
 // import Flatpickr from 'stimulus-flatpickr'
 
 // // Import style for flatpickr

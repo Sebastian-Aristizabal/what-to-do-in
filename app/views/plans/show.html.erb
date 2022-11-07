@@ -1,105 +1,149 @@
-        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><%= link_to "Home", root_path %></li>
-            <li class="breadcrumb-item"><%= link_to "Parches " + @plan.category.name, :back%></li>
-            <li class="breadcrumb-item active"><%= @plan.title%></li>
-          </ol>
-        </nav>
-      <div class="contenedor_detalles">
-        <%# <video controls="controls" loop="loop">
-          <source src="https://res.cloudinary.com/demo/video/upload/c_pad,du_10,h_360,q_70,w_480/dog.mp4" type="video/mp4" />
-        </video> %>
-        <% if @plan.photos.attached? %>
-          <%#= cl_image_tag @plan.photos.key.first, class: "photos" %>
-          <%= cl_image_tag @plan.photos.first.key, class: "photos"%>
-          <p></p>
-          <% @plan.photos.each_with_index do |photo, index| %>
-              <%#= image_tag(photo, :class => "photos") %>
-              <%#= cl_image_tag photo.key, class: "photos"%>
-              <%= cl_image_tag photo.key, class: "photos"%>
-              <%# @article.photos.each do |photo| %>
-                <%#= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-          <% end %>
-          <%# end %>
-        <% end %>
-        <p></p>
-        <%= render "carrucel" %>
-        <p></p>
-        <h1 class="plan-title"><%= @plan.title %></h1>
-        <p><%= @plan.details %></p>
-        <div class="card-time">
-        <div class="show-plan">
-          <p>Fecha de inicio: <%= @plan.start_date.to_date %></p>
-          <p>Hora inicial: <%= @plan.start_hour.strftime("%H:%M") %></p>
-        </div>
+<%# <div class= "banner1"> %>
+  <%# if @plan.photos.attached? %>
+    <%#= cl_image_tag @plan.photos.first.key%>
+  <%# end %>
+<%# </div> %>
+<div class= "container-plan">
+  <div class="banner-plan d-flex" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @plan.photos.first.key, crop: :fill %>')">
 
-        <div class="show-plan">
-          <p>Fecha de finalización: <%= @plan.end_date.to_date %></p>
-          <p>Hora final: <%= @plan.end_hour.strftime("%H:%M") %></p>
-        </div>
-        </div>
-        <div class="show-plan">
-          <p>Lugar: <%= @plan.address %></p>
-          <p class="free btn "><% if @plan.free %>
-            <%= "Gratuito" %>
-          <% else %>
-            <%= "De pago" %>
-          <% end %></p>
-        </div>
-        <div class="show-plan">
-          <% if user_signed_in? %>
-            <%= link_to "Seleccionar ❤", plan_selected_plans_path(plan_id: @plan), data:{turbo_method: :post}, class: "btn btn-ghost" %>
-          <% else %>
-            <%= link_to "Seleccionar ❤", new_user_session_path, class: "btn btn-ghost" %>
-          <% end %>
+    <ul class = "list">
+      <li class= "item-list"> <i class="fa-brands fa-facebook-f"></i> </li>
+      <li class= "item-list"> <i class="fa-brands fa-instagram"></i> </li>
+      <li class= "item-list"> <i class="fa-brands fa-whatsapp"></i> </li>
+    </ul>
+    <div>
+      <% if user_signed_in? %>
+        <%= link_to "", plan_selected_plans_path(plan_id: @plan), data:{turbo_method: :post}, class: "fa-sharp fa-solid fa-heart icon" %>
+      <% else %>
+        <%= link_to "", new_user_session_path, class: "fa-sharp fa-solid fa-heart icon" %>
+      <% end %>
+    </i></div>
+  </div>
 
-          <% if user_signed_in? %>
-            <% if current_user.id == @plan.user_id %>
-              <%= button_to "Delete", @plan, :method => :delete, class: "btn btn-ghost"  %>
-              <%= link_to "Edit", edit_plan_path(plan_id: @plan.id), class: "btn btn-ghost" %>
-            <% end %>
-          <% end %>
-        </div>
-          <div id="map">
-            <div style="width: 40%; height: 600px;"
-              data-controller="map"
-              data-map-markers-value="<%= @markers.to_json %>"
-              data-map-api-key-value="<%= ENV['MAP_BOX_KEY'] %>"></div>
-            </div>
-          </div>
-      </div>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
 
+  <div class = "container-header">
+    <%# <img class = "img-banner" src="https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="">
 
-      <div class=" reviews ">
-        <h2 class="title-form"> COMENTARIOS</h2>
-        <ul class="list-group">
-          <div class="cuadro">
-            <% @plan.reviews.each do |review| %>
-              <div class="review ">
-                <li class="item_review"><%= review.comment %></li>
-                <p> <%= "⭐" * review.rating.to_i %> </p>
-                <% if user_signed_in? %>
-                    <% if current_user.id == review.user_id %>
-                    <%= button_to "Delete", review_path(review), class: "btn btn-ghost", :method => :delete %>
-                    <% end %>
-                <% end %>
+    <h4 class = "img-banner">Daniel Soriano</h4> %>
+    <%# <div class="item2 avatar-big-plan"> %>
+      <%# <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt=""> %>
+    <%# </div> %>
+    <div class="item1">
+      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80 width=80px;" alt="" class="avatar-big-plan">
+    </div>
+    <div class="item2"><%= @plan.title %></div>
+    <div class="item3"><%= @plan.user.first_name %> <%= @plan.user.last_name %></div>
+    <div class="item4">
+
+    <%# @attendances.each do |attendance| %>
+        <p><%= @attendances_plan %> Personas quieren asistir a este parche:</p>
+    <%# end %>
+
+    </div>
+    <div class="item5"> <%= @plan.start_date.to_date %> <%= @plan.start_hour.strftime("%H:%M") %> <p><%= @plan.end_date.to_date %></p> <p><%= @plan.end_hour.strftime("%H:%M")%></p>  <p><%= @plan.address %></p> </div>
+  </div>
+
+  <div class = "container-body">
+    <div class = "item6 card-plan"><h4>Detalles</h4><p><%= @plan.details %></p></div>
+    <div class = "item7 card-plan">
+
+    </div>
+    <div class = "item8">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+            <% @plan.photos.each_with_index do |photo, index| %>
+              <div id="carousel_item_<%= index %>" class="carousel-item <%= index == 0 ? 'active' : '' %>">
+                <%= cl_image_tag photo.key, class: "photos"%><br>
               </div>
             <% end %>
-          </div>
-        </ul>
-      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+    </div>
 
-      <div class="formulario_review">
-        <% if user_signed_in? %>
-        <h2 class="title-form">¡DEJA TU COMENTARIO!</h2>
-            <%= simple_form_for([@plan, @review], data: { controller: "form-submit" }) do |f| %>
-              <%= f.input :comment, label: 'Haz tu comentario' %>
-              <%= f.input :rating, collection: (1..5).to_a, label: "Califica tu experiencia", input_html: {data: {controller: "star-rating", action: "click->form-submit#submit"}} %>
-              <%= f.submit "Submit", class: "btn btn-ghost"%>
-            <% end %>
-        <% else %>
-          <%= link_to "Deja tu comentario", new_user_session_path, class: "btn btn-ghost" %>
-        <% end %>
+  <div class = "item9">
+        <div class = "d-flex justify-content-between">
+          <div class = "avatar-medium-plan">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
+          </div>
+          <div class = "w-100">
+            <div class= "d-flex justify-content-between">
+              <h4>¡Deja tu reseña aquí!</h4>
+              <%= simple_form_for([@plan, @review], data: { controller: "form-submit" }) do |f| %>
+                <%= f.input :rating, collection: (1..5).to_a, label: false, input_html: {data: {controller: "star-rating", action: "click->form-submit#submit"}} %>
+            </div>
+              <div class = "d-flex">
+                <div class =  "flex-grow-1 m-0">
+                  <%= f.input :comment, :input_html => {:style=> 'width: 100%; margin: auto'}, label: false %>
+                </div>
+                  <%= f.submit "Submit", class: "btn btn-ghost"%>
+                </div>
+              <% end %>
+          </div>
+        </div>
+  </div>
+
+    <div class = "item10">
+      <% @plan.reviews.each do |review| %>
+
+      <div class = "d-flex justify-content-between">
+
+        <div class = "avatar-medium-plan">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
+        </div>
+        <div class = "w-100">
+          <div class= "d-flex justify-content-between">
+          <h1>nombre usuario</h1>
+
+          <div class = "d-flex">
+            <div>
+              <p class="m-0"> <%= "⭐" * review.rating.to_i %> </p>
+            </div>
+            <div>
+              <% if user_signed_in? %>
+                <% if current_user.id == review.user_id %>
+                <%= button_to "Delete", review_path(review), class: "btn btn-ghost", :method => :delete %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+          </div>
+          <div>
+            <h1><%= review.comment %></h1>
+            <%# <div class =  "flex-grow-1 m-0">
+            </div> %>
+          </div>
+        </div>
       </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="formulario_review">
+  <% if user_signed_in? %>
+  <h2 class="title-form">¡DEJA TU COMENTARIO!</h2>
+      <%= simple_form_for([@plan, @review], data: { controller: "form-submit" }) do |f| %>
+        <%= f.input :comment, label: 'Haz tu comentario' %>
+        <%= f.input :rating, collection: (1..5).to_a, label: "Califica tu experiencia", input_html: {data: {controller: "star-rating", action: "click->form-submit#submit"}} %>
+        <%= f.submit "Submit", class: "btn btn-ghost"%>
+      <% end %>
+  <% else %>
+    <%= link_to "Deja tu comentario", new_user_session_path, class: "btn btn-ghost" %>
+  <% end %>
+</div>

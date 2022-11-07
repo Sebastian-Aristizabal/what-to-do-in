@@ -1,0 +1,137 @@
+.container-plan {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  background-color: black;
+}
+
+.avatar-big-plan {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  background-color: red;
+  position: absolute;
+  margin-top: -10px;
+  margin-left: 50px;
+}
+
+.avatar-big-plan > img {
+  object-fit: cover;
+  height: auto;
+}
+
+.avatar-medium-plan {
+  position: relative;
+  width: 100px !important;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.avatar-medium-plan > img {
+  object-fit: cover;
+  height: auto;
+}
+
+
+.card-plan{
+  border-radius: 10px;
+  text-align: justify;
+  color: red;
+}
+.card-plan > p {
+  text-align: justify;
+  margin: 0px;
+  color: red;
+}
+
+//Responsive
+
+@media(min-width: 600px) {
+  .container-header {
+    display: grid;
+    grid-template-columns: 30% 1fr 1fr;
+    grid-template-rows: 40% auto;
+    gap: 10px;
+    padding: 10px;
+    height: 400px;
+  }
+  .container-header > div {
+    background-color: rgba(255, 255, 255, 0.8);
+
+    padding: 20px 0;
+    font-size: 30px;
+  }
+  .item2 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  }
+
+
+  .container-body {
+    height: 1500px;
+    background-color: rgb(147, 229, 216);
+    padding: 20px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 0.3fr 1fr;
+    grid-template-columns: 0.55fr 0.45fr;
+    gap: 14px;
+  }
+
+
+  .container-body > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: justify;
+    padding: 22px;
+    font-size: 30px;
+  }
+  .item8 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  .item9 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  .item10 {
+      grid-column-start: 1;
+      grid-column-end: 3;
+  }
+}
+
+@media(max-width: 600px) {
+  .container-header {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+    height: auto;
+  }
+
+  .container-header > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px 0;
+    font-size: 30px;
+  }
+
+  .item2 {
+    height: 300px;
+  }
+
+  .container-body {
+    height: 1500px;
+    background-color: rgb(147, 229, 216);
+    padding: 20px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+
+  }
+  .container-body > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: justify;
+    padding: 22px;
+    font-size: 30px;
+  }
+}
