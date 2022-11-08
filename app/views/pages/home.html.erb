@@ -1,10 +1,8 @@
 
-
   <div class="banner">
         <div class="container">
           <div class="content center-column">
-            <h1 class="tipo-letra">¡QuéHayPa'Hacer en Medellín!</h1>
-
+            <h1 class="tipo-letra">¡Qué Hay Pa'Hacer en Medellín!</h1>
           </div>
         </div>
 
@@ -14,7 +12,7 @@
           </video>
         </div>
   </div>
-    <h2 class="title-form">¡lo más visitado del momento!</h2>
+    <h2 class="title-form">¡Lo más visitado del momento!</h2>
              <div class="cards-principal mx-auto" style="width:80%">
              <div class=" m-auto event-card full">
                 <% plan = @plans.find(@selected_top1[0]) %>
@@ -22,7 +20,7 @@
                         <%= image_tag(plan.photos.last) %>
                 </div>
                     <div class="card__content">
-                              
+
                               <h4><%= plan.title %></h4>
                               <h6><%= plan.category.name %></h6>
                               <h6><%= @selected_top1[1] %> personas quieren asistir</h6><h6><%= link_to "Ver este parche", plan_path(plan), class: "btn btn-ghost" %></h6>
@@ -48,27 +46,29 @@
         <% end %>
     </ul>
 
+    <div style="background-color:#8CC7C6">
+      <h2 class="title-form">¡Párchese en Medellín!</h2>
+      <ul class="cards1">
+          <% @category.each do |category| %>
+              <li class="cards__item">
+                  <div class="card">
+                      <div class="card__image card__image--record">
+                      <% if category.photos.attached? %>
+                        <% category.photos.each do |photo| %>
+                          <%= image_tag(photo, :class => "photos") %>
+                        <% end %>
+                      <% end %></div>
+                      <div class="card__content">
+                          <div class="title-form1"><%= category.name %></div>
 
-    <h2 class="title-form">¡Párchese en Medellín!</h2>
-    <ul class="cards1">
-        <% @category.each do |category| %>
-            <li class="cards__item">
-                <div class="card">
-                    <div class="card__image card__image--record">
-                    <% if category.photos.attached? %>
-                      <% category.photos.each do |photo| %>
-                         <%= image_tag(photo, :class => "photos") %>
-                      <% end %>
-                    <% end %></div>
-                    <div class="card__content">
-                        <div class="title-form1"><%= category.name %></div>
+                          <%= link_to "Parches", plans_path(category_id: category.id),class:"btn btn--block card__btn"%>
+                      </div>
+                  </div>
+              </li>
+          <% end %>
+      </ul>
+    </div>
 
-                        <%= link_to "Parches", plans_path(category_id: category.id),class:"btn btn--block card__btn"%>
-                    </div>
-                </div>
-            </li>
-        <% end %>
-    </ul>
       <div class="row2" style="padding-left: 20px;">
         <div class="col-8"></div>
         <div class="element col-8 mt-5">
@@ -127,3 +127,16 @@
           </div>
       </div>
     </div>
+<div id="img-about" class="d-flex align-items-center mt-5">
+  <div class="cards-principal mx-auto" style="width:40%">
+        <div class="element-about">
+                    <div>
+                    <div id = "about-us">
+                        <p class="text-justify p-3 text-justify" style="color:black">¡QuéHayPaHacer! es una iniciativa creada por desarrolladores de la ciudad de Medellín cuyo propósito es poner en un solo lugar los parches más chimbas del momento, y así dar a conocer su gastronomía, sus planes culturales, y sus zonas verdes para enamorar a todos los visitantes de la ciudad de la eterna primavera.</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  </div>
+</div>
