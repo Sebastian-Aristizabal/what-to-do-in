@@ -246,13 +246,6 @@ photo_48 = URI.open("https://www.oyster.com/wp-content/uploads/sites/35/2019/05/
 plan_31.photos.attach(io: photo_48, filename: "perrines2.png", content_type: "image/png")
 plan_31.save!
 
-plan_32 = Plan.new(title: "Envy Rooftop", video_url: "", details: "Rooftop ofrece un Lounge/ Bar con Dj en vivo y una innovadora piscina tipo acuario, creando dos espacios integrados para el descanso, la diversión y el entretenimiento.", start_date: Date.today, end_date: 5.days.from_now, start_hour:"2022-10-23 09:00:00", end_hour:"2022-10-23 18:00:00", address:"Carrera 9a 37 -16 Parque Lleras, Medellín", link_web:"https://www.thecharlee.com/es/espacios/envy-roof/", instagram_link:"https://www.instagram.com/envyrooftop1/", facebook_link:"https://web.facebook.com/envyrooftop1", free: false, category_id: category_4.id, user_id: user_4.id)
-photo_49 = URI.open("https://media-cdn.tripadvisor.com/media/photo-m/1280/14/24/26/a8/envy-rooftop.jpg")
-plan_32.photos.attach(io: photo_49, filename: "envy.png", content_type: "image/png")
-photo_50 = URI.open("https://www.oyster.com/wp-content/uploads/sites/35/2019/05/envy-rooftop-v14179918-1440.jpg")
-plan_32.photos.attach(io: photo_50, filename: "perrines2.png", content_type: "image/png")
-plan_32.save!
-
 puts "plans creados"
 
 #seleccion de planes
