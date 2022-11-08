@@ -2,7 +2,6 @@
   max-width: 1000px;
   margin: auto;
   display: grid;
-  background-color: black;
 }
 
 .avatar-big-plan {
@@ -32,7 +31,6 @@
   height: auto;
 }
 
-
 .card-plan{
   border-radius: 10px;
   text-align: justify;
@@ -44,6 +42,41 @@
   color: red;
 }
 
+.banner-plan {
+  width: 100%;
+  height: 420px;
+}
+
+#list {
+  list-style: none;
+}
+
+#list li {
+  color: white;
+  size: 30px;
+}
+
+#about-us {
+  margin: auto;
+  width: 60%;
+  color: black;
+}
+
+.element-about{
+  margin: auto;
+  background-color: rgb(255, 255, 255);
+  // width: 50%;
+  box-shadow: 0 0 30px;
+  right: 90%;
+  padding: 0 3px;
+  border-radius: 15px;
+}
+
+#img-about {
+  height: 450px;
+  object-fit: cover;
+  background-image: url("https://media-cdn.tripadvisor.com/media/photo-m/1280/24/17/65/59/comuna-13-graffiti-tour.jpg");
+}
 //Responsive
 
 @media(min-width: 600px) {
@@ -69,7 +102,7 @@
 
   .container-body {
     height: 1500px;
-    background-color: rgb(147, 229, 216);
+    background-color: rgb(250, 250, 250);
     padding: 20px;
     display: grid;
     grid-template-rows: 1fr 1fr 0.3fr 1fr;
@@ -109,7 +142,6 @@
   }
 
   .container-header > div {
-    background-color: rgba(255, 255, 255, 0.8);
     padding: 20px 0;
     font-size: 30px;
   }
@@ -120,7 +152,6 @@
 
   .container-body {
     height: 1500px;
-    background-color: rgb(147, 229, 216);
     padding: 20px;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -129,7 +160,6 @@
 
   }
   .container-body > div {
-    background-color: rgba(255, 255, 255, 0.8);
     text-align: justify;
     padding: 22px;
     font-size: 30px;
