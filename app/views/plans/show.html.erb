@@ -36,10 +36,10 @@
       <%# <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt=""> %>
     <%# </div> %>
     <div class="item1">
-      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80 width=80px;" alt="" class="avatar-big-plan">
+      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="" class="avatar-big-plan">
     </div>
-    <div class="item2"><%= @plan.title %></div>
-    <div class="item3"><%= @plan.user.first_name %> <%= @plan.user.last_name %>
+    <div class="item2"><h2><%= @plan.title %></h2></div>
+    <div class="item3"><h3><%= @plan.user.first_name %> <%= @plan.user.last_name %></h3>
           <% if user_signed_in? %>
             <% if current_user.id == @plan.user_id %>
               <%= button_to "Delete", @plan, :method => :delete, class: "btn btn-ghost"  %>
@@ -49,11 +49,15 @@
     <div class="item4">
 
     <%# @attendances.each do |attendance| %>
-        <p><%= @attendances_plan %> Personas quieren asistir a este parche:</p>
+        <h5><%= @attendances_plan %> Personas quieren asistir a este parche</h5>
     <%# end %>
 
     </div>
-    <div class="item5"> <%= @plan.start_date.to_date %> <%= @plan.start_hour.strftime("%H:%M") %> <p><%= @plan.end_date.to_date %></p> <p><%= @plan.end_hour.strftime("%H:%M")%></p>  <p><%= @plan.address %></p> </div>
+    <div class="item5">
+      <h5>Desde el:</h5> <i><%= @plan.start_date.to_date %> <%= @plan.start_hour.strftime("%H:%M") %></i>
+      <h5>Hasta el:</h5> <i><%= @plan.end_date.to_date %> <%= @plan.end_hour.strftime("%H:%M")%></i>
+      <h5><%= @plan.address %></h5>
+    </div>
   </div>
 
   <div class = "container-body">
@@ -66,42 +70,42 @@
         </div>
     </div>
     <div class = "item8">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-            <% @plan.photos.each_with_index do |photo, index| %>
-              <div id="carousel_item_<%= index %>" class="carousel-item <%= index == 0 ? 'active' : '' %>">
-                <%= cl_image_tag photo.key, class: "photos"%><br>
-              </div>
-            <% end %>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <% @plan.photos.each_with_index do |photo, index| %>
+            <div id="carousel_item_<%= index %>" class="carousel-item <%= index == 0 ? 'active' : '' %>">
+              <%= cl_image_tag photo.key, class:"photo-show"%><br>
+            </div>
+          <% end %>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+      </div>
     </div>
 
-  <div class = "item9">
-        <div class = "d-flex justify-content-between">
-          <div class = "avatar-medium-plan">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
-          </div>
-          <div class = "w-100">
-            <div class= "d-flex justify-content-between">
-              <h4>¡Deja tu reseña aquí!</h4>
-              <%= simple_form_for([@plan, @review], data: { controller: "form-submit" }) do |f| %>
-                <%= f.input :rating, collection: (1..5).to_a, label: "Califica tu experiencia", input_html: {data: {controller: "star-rating", action: "click->form-submit#submit"}} %>
-                <%= f.input :comment, :input_html => {:style=> 'width: 100%; margin: auto'}, label: false %>
-                <%= f.submit "Submit", class: "btn btn-ghost"%>
-              <% end %>
-            </div>
+    <div class = "item9">
+      <div class = "d-flex justify-content-between">
+        <div class = "avatar-medium-plan">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
+        </div>
+        <div class = "w-100">
+          <div class= "d-flex justify-content-between">
+            <h4>¡Deja tu reseña aquí!</h4>
+            <%= simple_form_for([@plan, @review], data: { controller: "form-submit" }) do |f| %>
+              <%= f.input :rating, collection: (1..5).to_a, label: "Califica tu experiencia", input_html: {data: {controller: "star-rating", action: "click->form-submit#submit"}} %>
+              <%= f.input :comment, :input_html => {:style=> 'width: 100%; margin: auto'}, label: false %>
+              <%= f.submit "Submit", class: "btn btn-ghost"%>
+            <% end %>
           </div>
         </div>
-  </div>
+      </div>
+    </div>
 
 
     <div class = "item10">
@@ -114,7 +118,7 @@
         </div>
         <div class = "w-100">
           <div class= "d-flex justify-content-between">
-          <h1>nombre usuario</h1>
+          <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
 
           <div class = "d-flex">
             <div>
@@ -130,7 +134,7 @@
           </div>
           </div>
           <div>
-            <h1><%= review.comment %></h1>
+            <h5><%= review.comment %></h5>
             <%# <div class =  "flex-grow-1 m-0">
             </div> %>
           </div>
