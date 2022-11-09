@@ -65,6 +65,7 @@ class PlansController < ApplicationController
         image_url: helpers.asset_url(marker_image)
       }
     end
+    @attendances_plan = @plan.selected_plans.where(status:0).count
   end
 
   def new

@@ -6,14 +6,47 @@
 
 .avatar-big-plan {
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  background-color: red;
+  width: 200px;
+  height: 200px;
   position: absolute;
-  margin-top: -10px;
-  margin-left: 50px;
+  margin-top: -80px;
+  margin-left: 40px;
+  border-style: solid;
+  border-width: 10px;
+  border-color: white;
 }
 
+.container-header h5{
+  color: rgb(159, 168, 168);
+  margin-bottom: 0px;
+  margin-top: 8px;
+}
+
+
+.container-header h2{
+font-size: 50px;
+background: linear-gradient(to right, #47DFD3 23%, rgb(5, 5, 5) 40%, rgb(5, 5, 5) 50%, #47DFD3 20%);
+display: inline-block;
+// background: linear-gradient(to top, rgba(71, 223, 211, 1)50%, rgba(5, 5, 5, 1) 50%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-attachment: fixed;
+}
+.container-header h3 {
+  font-size: 35px;
+  text-align: center;
+}
+
+.container-body h5{
+color: rgb(159, 168, 168);
+padding-left: 20px;
+}
+
+.container-body h3{
+  color: rgb(13, 14, 14);
+  padding-left: 20px;
+  }
 .avatar-big-plan > img {
   object-fit: cover;
   height: auto;
@@ -21,7 +54,8 @@
 
 .avatar-medium-plan {
   position: relative;
-  width: 100px !important;
+  width: 80px;
+  height: 80px;
   overflow: hidden;
   border-radius: 50%;
 }
@@ -34,12 +68,12 @@
 .card-plan{
   border-radius: 10px;
   text-align: justify;
-  color: red;
 }
 .card-plan > p {
   text-align: justify;
+  font-size: large;
   margin: 0px;
-  color: red;
+  color: rgb(159, 168, 168);
 }
 
 .banner-plan {
@@ -77,6 +111,16 @@
   object-fit: cover;
   background-image: url("https://media-cdn.tripadvisor.com/media/photo-m/1280/24/17/65/59/comuna-13-graffiti-tour.jpg");
 }
+
+#imagen-carousel {
+  height: 100%;
+  // object-fit: cover;
+}
+
+.container-header i {
+  font-size: 30px;
+  font-weight: 700;
+}
 //Responsive
 
 @media(min-width: 600px) {
@@ -101,11 +145,11 @@
 
 
   .container-body {
-    height: 1500px;
-    background-color: rgb(250, 250, 250);
-    padding: 20px;
+    height: auto;
+    background-color: rgb(71, 223, 211);
+    padding: 20px 20px 40px 20px;
     display: grid;
-    grid-template-rows: 1fr 1fr 0.3fr 1fr;
+    grid-template-rows: 1fr 445px 0.3fr auto;
     grid-template-columns: 0.55fr 0.45fr;
     gap: 14px;
   }
@@ -128,6 +172,7 @@
   .item10 {
       grid-column-start: 1;
       grid-column-end: 3;
+      height: auto;
   }
 }
 
