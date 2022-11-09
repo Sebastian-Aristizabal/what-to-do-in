@@ -10,7 +10,7 @@
 body {
   margin: 0;
   font-family: 'GT Walsheim Pro';
-
+  position: relative;
 }
 
 h1, h2, h3, h4 {
@@ -54,5 +54,10 @@ p{
 .title-form{
   font-family: Poppins;
   text-align: center;
+}
+
+.bg-blue {
+  background-color: #8CC7C6;
+  color: white;
 }
 ///////////////////////////////////////// diseño formulario
