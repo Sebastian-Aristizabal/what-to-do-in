@@ -239,12 +239,26 @@ photo_8 = URI.open("https://los40.com.co/los40/imagenes/2022/01/28/tendencias/16
 plan_8.photos.attach(io: photo_8, filename:"photo_badbunny.png", content_type: "image/png")
 plan_8.save!
 
-plan_31 = Plan.new(title: "Envy Rooftop", video_url: "", details: "Rooftop ofrece un Lounge/ Bar con Dj en vivo y una innovadora piscina tipo acuario, creando dos espacios integrados para el descanso, la diversión y el entretenimiento.", start_date: Date.today, end_date: 5.days.from_now, start_hour:"2022-10-23 09:00:00", end_hour:"2022-10-23 18:00:00", address:"Carrera 9a 37 -16 Parque Lleras, Medellín", link_web:"https://www.thecharlee.com/es/espacios/envy-roof/", instagram_link:"https://www.instagram.com/envyrooftop1/", facebook_link:"https://web.facebook.com/envyrooftop1", free: false, category_id: category_4.id, user_id: user_4.id)
+plan_31 = Plan.new(title: "Envy Rooftop", video_url: "", details: "Rooftop ofrece un Lounge/ Bar con Dj en vivo y una innovadora piscina tipo acuario, creando dos espacios integrados para el descanso, la diversión y el entretenimiento.", start_date: Date.today, end_date: 5.days.from_now, start_hour:"2022-10-23 09:00:00", end_hour:"2022-10-23 18:00:00", address:"Parque Lleras, Medellín", link_web:"https://www.thecharlee.com/es/espacios/envy-roof/", instagram_link:"https://www.instagram.com/envyrooftop1/", facebook_link:"https://web.facebook.com/envyrooftop1", free: false, category_id: category_4.id, user_id: user_4.id)
 photo_47 = URI.open("https://media-cdn.tripadvisor.com/media/photo-m/1280/14/24/26/a8/envy-rooftop.jpg")
 plan_31.photos.attach(io: photo_47, filename: "envy.png", content_type: "image/png")
 photo_48 = URI.open("https://www.oyster.com/wp-content/uploads/sites/35/2019/05/envy-rooftop-v14179918-1440.jpg")
 plan_31.photos.attach(io: photo_48, filename: "perrines2.png", content_type: "image/png")
 plan_31.save!
+
+plan_32 = Plan.new(title: "La Chula", video_url: "", details: "En la Chula urbana vives Medellín con toda su intensidad, la belleza de su gente, el ambiente de sus rumbas y todo el talento de la escena urbana más importante del mundo.", start_date: Date.today, end_date: 5.days.from_now, start_hour:"2022-10-23 09:00:00", end_hour:"2022-10-23 18:00:00", address:"Via las Palmas", link_web:"https://www.lachula.com.co/medellin", instagram_link:"https://www.instagram.com/lachulamedellin/", facebook_link:"https://web.facebook.com/envyrooftop1", free: false, category_id: category_4.id, user_id: user_4.id)
+photo_49 = URI.open("https://www.semana.com/resizer/Uzd-jk62XPw_hftG6z36b8V5ZqM=/1280x720/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/SQ4XJMW46ZCS5HBXAG57N5JSXA.jpg")
+plan_32.photos.attach(io: photo_49, filename: "lachula.png", content_type: "image/png")
+photo_50 = URI.open("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/22/b4/da/75/the-place-was-awesome.jpg?w=1200&h=1200&s=1")
+plan_32.photos.attach(io: photo_50, filename: "lachula2.png", content_type: "image/png")
+plan_32.save!
+
+plan_33 = Plan.new(title: "La Tienda de la 70", video_url: "", details: "La Tienda de la 70 un lugar diferente donde todos los días es diciembre y cuando uno se sienta en una mesa parece transportarse al pueblo más típico de Antioquia. Un lugar cuidadosamente decorado como en las grandes tiendas de pueblo, en las que no faltan los cachivaches, las carrascas, los marranos y un gran ambiente navideño. nos identificamos principalmente por nuestros deliciosos pasabocas: tamales, empanadas, chicharrón, albóndigas, arepitas con hogao y muchas mas y lo mejor gratis!! manejamos todos los días una amplia carta de platos nacionales e internacionales, picadas, asados, menú del día, desayunos, bebidas y demas... y ni te imaginas la parranda que se forma cada fin de semana con trovadores, artistas, personajes y show en vivo.", start_date: Date.today, end_date: 5.days.from_now, start_hour:"2022-10-23 09:00:00", end_hour:"2022-10-23 18:00:00", address:"Carrera 70 Medellin", link_web:"", instagram_link:"https://www.instagram.com/latiendadela70/", facebook_link:"https://web.facebook.com/tiendadela70", free: false, category_id: category_4.id, user_id: user_4.id)
+photo_51 = URI.open("https://paisgourmet.co/cocinacol/wp-content/uploads/2022/07/la-tienda-de-la-70-cocinacol-6.jpg")
+plan_33.photos.attach(io: photo_51, filename: "latienda.png", content_type: "image/png")
+photo_52 = URI.open("https://media-cdn.tripadvisor.com/media/photo-m/1280/1a/13/d3/d4/tenemos-todo-lo-bueno.jpg")
+plan_33.photos.attach(io: photo_52, filename: "latienda2.png", content_type: "image/png")
+plan_33.save!
 
 puts "plans creados"
 
