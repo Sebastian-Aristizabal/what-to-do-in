@@ -53,7 +53,7 @@
     <div class="item3"><h3><%= @plan.user.first_name %> <%= @plan.user.last_name %></h3>
           <% if user_signed_in? %>
             <% if current_user.id == @plan.user_id %>
-              <%= button_to "",  @plan, :method => :delete, class: "fa-sharp fa-solid fa-trash"  %>
+              <%#= button_to "",  @plan, :method => :delete, class: "fa-sharp fa-solid fa-trash"  %>
               <%#= link_to plan_path(params[:id]), :method => :delete do %>
                 <%# <i class="fa-sharp fa-solid fa-trash color-icon.header"></i> %>
               <%# end %>
