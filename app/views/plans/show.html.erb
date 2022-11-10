@@ -4,21 +4,28 @@
     <%#= cl_image_tag @plan.photos.first.key%>
   <%# end %>
 <%# </div> %>
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to "Home", root_path %></li>
+    <li class="breadcrumb-item"><%= link_to "Parches " + @plan.category.name, :back%></li>
+    <li class="breadcrumb-item active"><%= @plan.title%></li>
+  </ol>
+</nav>
 <div class= "container-plan">
-  <div class="banner-plan d-flex" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @plan.photos.first.key, crop: :fill %>')">
+  <div class="banner-plan d-flex justify-content-end" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @plan.photos.first.key, crop: :fill %>'); background-size: cover;">
 
-    <ul id = "list">
-      <li class= "item-list"><a href="<%=@plan.facebook_link%>" target="_blank"> <i class="fa-brands fa-facebook-f"></i></a></li>
-      <li class= "item-list"><a href="<%=@plan.instagram_link%>" target="_blank"> <i class="fa-brands fa-instagram"></i></a></li>
-      <li class= "item-list"><a href="<%=@plan.link_web%>" target="_blank"> <i class="fa-solid fa-globe"></i></a></li>
+    <ul class = "list mt-4 mr-4">
+      <li>
+        <% if user_signed_in? %>
+          <%= link_to "", plan_selected_plans_path(plan_id: @plan), data:{turbo_method: :post}, class: "fa-sharp fa-solid fa-heart icon item-list" %>
+        <% else %>
+          <%= link_to "", new_user_session_path, class: "fa-sharp fa-solid fa-heart icon item-list" %>
+        <% end %>
+      </li>
+      <li><a href="<%=@plan.facebook_link%>" target="_blank"> <i class="fa-brands fa-facebook-f item-list"></i></a></li>
+      <li><a href="<%=@plan.instagram_link%>" target="_blank"> <i class="fa-brands fa-instagram item-list"></i></a></li>
+      <li><a href="<%=@plan.link_web%>" target="_blank"> <i class="fa-solid fa-globe item-list"></i></a></li>
     </ul>
-    <div>
-      <% if user_signed_in? %>
-        <%= link_to "", plan_selected_plans_path(plan_id: @plan), data:{turbo_method: :post}, class: "fa-sharp fa-solid fa-heart icon" %>
-      <% else %>
-        <%= link_to "", new_user_session_path, class: "fa-sharp fa-solid fa-heart icon" %>
-      <% end %>
-    </i></div>
   </div>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -35,24 +42,50 @@
     <%# <div class="item2 avatar-big-plan"> %>
       <%# <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt=""> %>
     <%# </div> %>
+
     <div class="item1">
       <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="" class="avatar-big-plan">
+      <%= cl_image_tag @plan.user.photo.key, class:"avatar-big-plan"%>
+      <%#= cl_image_tag(selected.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
     </div>
+
     <div class="item2"><h2><%= @plan.title %></h2></div>
     <div class="item3"><h3><%= @plan.user.first_name %> <%= @plan.user.last_name %></h3>
           <% if user_signed_in? %>
             <% if current_user.id == @plan.user_id %>
-              <%= button_to "Delete", @plan, :method => :delete, class: "btn btn-ghost"  %>
-              <%= link_to "Edit", edit_plan_path(plan_id: @plan.id), class: "btn btn-ghost" %>
-            <% end %>
-          <% end %></div>
-    <div class="item4">
+              <%= button_to "",  @plan, :method => :delete, class: "fa-sharp fa-solid fa-trash"  %>
+              <%#= link_to plan_path(params[:id]), :method => :delete do %>
+                <%# <i class="fa-sharp fa-solid fa-trash color-icon.header"></i> %>
+              <%# end %>
 
-    <%# @attendances.each do |attendance| %>
+              <%= link_to @plan,  method: :delete, data: { turbo_method: :delete} do %>
+                <i class="fa-regular fa-trash"></i>
+              <% end %>
+
+              <%= link_to edit_plan_path(plan_id: @plan.id) do %>
+                <i class="fa-solid fa-pen-to-square color-icon.header"></i>
+              <% end %>
+            <% end %>
+          <% end %>
+    </div>
+    <div class="item4">
+      <%# @attendances.each do |attendance| %>
+      <div>
+        <%# if current_user.photo.attached? %>
+          <%#= cl_image_tag(selected.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+        <%# end %>
+
+
+        <%# if user.photo.attached? %>
+          <%# user.photo.each do |photo| %>
+            <%#= image_tag(photo, :class => "photos") %>
+          <%# end %>
+        <%# end %>
+      </div>
         <h5><%= @attendances_plan %> Personas quieren asistir a este parche</h5>
     <%# end %>
-
     </div>
+
     <div class="item5">
       <h5>Desde el:</h5> <i><%= @plan.start_date.to_date %> <%= @plan.start_hour.strftime("%H:%M") %></i>
       <h5>Hasta el:</h5> <i><%= @plan.end_date.to_date %> <%= @plan.end_hour.strftime("%H:%M")%></i>
@@ -77,6 +110,7 @@
               <%= cl_image_tag photo.key, class:"photo-show"%><br>
             </div>
           <% end %>
+
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -92,17 +126,30 @@
     <div class = "item9">
       <div class = "d-flex justify-content-between">
         <div class = "avatar-medium-plan">
-          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
+        <% if current_user %>
+          <%= cl_image_tag current_user.photo.key, class:"avatar-medium-plan"%>
+          <%# <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt=""> %>
+        <% end %>
         </div>
         <div class = "w-100">
-          <div class= "d-flex justify-content-between">
+          <%# <div class= "d-flex justify-content-between"> %>
+
+          <% if current_user %>
             <h4>¡Deja tu reseña aquí!</h4>
             <%= simple_form_for([@plan, @review], data: { controller: "form-submit" }) do |f| %>
               <%= f.input :rating, collection: (1..5).to_a, label: "Califica tu experiencia", input_html: {data: {controller: "star-rating", action: "click->form-submit#submit"}} %>
-              <%= f.input :comment, :input_html => {:style=> 'width: 100%; margin: auto'}, label: false %>
+              <%= f.input :comment, :input_html => {:style=> 'width: 70%;'}, label: false %>
               <%= f.submit "Submit", class: "btn btn-ghost"%>
             <% end %>
-          </div>
+          <%# </div> %>
+          <% else %>
+            <%= simple_form_for([@plan, @review], data: { controller: "form-submit" }) do |f| %>
+                <%= f.input :rating, collection: (1..5).to_a, label: "Califica tu experiencia", input_html: {data: {controller: "star-rating", action: "click->form-submit#submit"}} %>
+                <%= f.input :comment, :input_html => {:style=> 'width: 70%;'}, label: false %>
+                <%#= f.submit "Submit", class: "btn btn-ghost"%>
+              <% end %>
+            <%= link_to "Submit", new_user_session_path, class: "btn btn-ghost" %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -111,15 +158,13 @@
     <div class = "item10">
       <% @plan.reviews.each do |review| %>
 
-      <div class = "d-flex justify-content-between">
-
-        <div class = "avatar-medium-plan">
-          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">
-        </div>
+      <div class = "d-flex justify-content-between mb-3">
+        <%= cl_image_tag review.user.photo.key, class:"avatar-medium-plan"%>
         <div class = "w-100">
           <div class= "d-flex justify-content-between">
+          <% if current_user %>
           <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
-
+          <% end %>
           <div class = "d-flex">
             <div>
               <p class="m-0"> <%= "⭐" * review.rating.to_i %> </p>
