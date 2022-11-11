@@ -153,7 +153,7 @@ plan_4.photos.attach(io: photo_4, filename:"photo_normadia.png", content_type: "
 plan_4.save!
 
 plan_22 = Plan.new(title: "Parque de la Conservación", video_url: "", details: "Un pulmón verde lleno de vida en medio de la ciudad de Medellín, y desde allí nos proyectamos para generar consciencia, transformar comportamientos, proteger el medio ambiente y su biodiversidad con un enfoque ecosistémico, tanto al interior de nuestro Parque como en otros territorios. El Parque de la Conservación es una entidad privada sin ánimo de lucro con 60 años de funcionamiento, perteneciente a la Sociedad de Mejoras Públicas de Medellín S.M.P.", start_date: Date.today, end_date: 5.days.from_now, start_hour:"2022-10-23 09:00:00", end_hour:"2022-10-23 18:00:00", address:"CRA. 52 20-63 MEDELLÍN", link_web:"https://www.parquedelaconservacion.com/", instagram_link:"https://www.instagram.com/parquedelaconservacion/", facebook_link:"https://web.facebook.com/parquedelaconservacion", free: false, category_id: category_2.id, user_id: user_2.id)
-photo_29 = URI.open("https://vivirenelpoblado.com/wp-content/uploads/2021/10/El-parque-de-la-Conservacion-04-1200x800.jpg")
+photo_29 = URI.open("https://files.rcnradio.com/2021-01/whatsapp_image_2021-01-08_at_1.12.40_pm_1_0.jpeg")
 plan_22.photos.attach(io: photo_29, filename: "paisa.png", content_type: "image/png")
 photo_30 = URI.open("https://vivirenelpoblado.com/wp-content/uploads/2021/10/El-parque-de-la-Conservacion-08.jpg")
 plan_22.photos.attach(io: photo_30, filename: "paisa2.png", content_type: "image/png")
@@ -246,7 +246,7 @@ photo_48 = URI.open("https://www.oyster.com/wp-content/uploads/sites/35/2019/05/
 plan_31.photos.attach(io: photo_48, filename: "perrines2.png", content_type: "image/png")
 plan_31.save!
 
-plan_32 = Plan.new(title: "La Chula", video_url: "", details: "En la Chula urbana vives Medellín con toda su intensidad, la belleza de su gente, el ambiente de sus rumbas y todo el talento de la escena urbana más importante del mundo.", start_date: Date.today, end_date: 5.days.from_now, start_hour:"2022-10-23 09:00:00", end_hour:"2022-10-23 18:00:00", address:"Via las Palmas", link_web:"https://www.lachula.com.co/medellin", instagram_link:"https://www.instagram.com/lachulamedellin/", facebook_link:"https://web.facebook.com/envyrooftop1", free: false, category_id: category_4.id, user_id: user_4.id)
+plan_32 = Plan.new(title: "La Chula", video_url: "", details: "En la Chula urbana vives Medellín con toda su intensidad, la belleza de su gente, el ambiente de sus rumbas y todo el talento de la escena urbana más importante del mundo.", start_date: Date.today, end_date: 5.days.from_now, start_hour:"2022-10-23 09:00:00", end_hour:"2022-10-23 18:00:00", address:"Cra 42 #85b-121, Itagüi, Antioquia", link_web:"https://www.lachula.com.co/medellin", instagram_link:"https://www.instagram.com/lachulamedellin/", facebook_link:"https://web.facebook.com/envyrooftop1", free: false, category_id: category_4.id, user_id: user_4.id)
 photo_49 = URI.open("https://www.semana.com/resizer/Uzd-jk62XPw_hftG6z36b8V5ZqM=/1280x720/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/SQ4XJMW46ZCS5HBXAG57N5JSXA.jpg")
 plan_32.photos.attach(io: photo_49, filename: "lachula.png", content_type: "image/png")
 photo_50 = URI.open("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/22/b4/da/75/the-place-was-awesome.jpg?w=1200&h=1200&s=1")

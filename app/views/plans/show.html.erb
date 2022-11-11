@@ -44,13 +44,19 @@
     <%# </div> %>
 
     <div class="item1">
-      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="" class="avatar-big-plan">
+      <div>
       <%= cl_image_tag @plan.user.photo.key, class:"avatar-big-plan"%>
       <%#= cl_image_tag(selected.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+      </div>
+      <div class="name-user">
+        <h5><%= @plan.user.first_name %> <%= @plan.user.last_name %></h5>
+      </div>
     </div>
 
-    <div class="item2"><h2><%= @plan.title %></h2></div>
-    <div class="item3"><h3><%= @plan.user.first_name %> <%= @plan.user.last_name %></h3>
+    <div class="item2">
+    <h3 class="title-form"><%= @plan.title %></h3>
+    </div>
+    <div class="item3 ms-5 ps-4">
           <% if user_signed_in? %>
             <% if current_user.id == @plan.user_id %>
               <%#= button_to "",  @plan, :method => :delete, class: "fa-sharp fa-solid fa-trash"  %>
@@ -59,7 +65,7 @@
               <%# end %>
 
               <%= link_to @plan,  method: :delete, data: { turbo_method: :delete} do %>
-                <i class="fa-regular fa-trash"></i>
+                <i class="fa-regular fa-trash pe-3"></i>
               <% end %>
 
               <%= link_to edit_plan_path(plan_id: @plan.id) do %>
@@ -70,26 +76,27 @@
     </div>
     <div class="item4">
       <%# @attendances.each do |attendance| %>
-      <div>
+      <div class="pb-5 font">
         <%# if current_user.photo.attached? %>
           <%#= cl_image_tag(selected.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
         <%# end %>
 
-
+        <h5>Desde el:</h5> <h4><%= @plan.start_date.to_date %> <%= @plan.start_hour.strftime("%H:%M") %></h4>
         <%# if user.photo.attached? %>
           <%# user.photo.each do |photo| %>
             <%#= image_tag(photo, :class => "photos") %>
           <%# end %>
         <%# end %>
       </div>
-        <h5><%= @attendances_plan %> Personas quieren asistir a este parche</h5>
+        <h5 class="font"><%= @attendances_plan %> Personas quieren asistir a este parche</h5>
     <%# end %>
     </div>
 
     <div class="item5">
-      <h5>Desde el:</h5> <i><%= @plan.start_date.to_date %> <%= @plan.start_hour.strftime("%H:%M") %></i>
-      <h5>Hasta el:</h5> <i><%= @plan.end_date.to_date %> <%= @plan.end_hour.strftime("%H:%M")%></i>
-      <h5><%= @plan.address %></h5>
+    <div class="pb-5">
+      <h5>Hasta el:</h5> <h4><%= @plan.end_date.to_date %> <%= @plan.end_hour.strftime("%H:%M")%></h4>
+    </div>
+      <h5  class="font"><%= @plan.address %></h5>
     </div>
   </div>
 
@@ -135,16 +142,16 @@
           <%# <div class= "d-flex justify-content-between"> %>
 
           <% if current_user %>
-            <h4>¡Deja tu reseña aquí!</h4>
+            <h4 class="font">¡Deja tu reseña aquí!</h4>
             <%= simple_form_for([@plan, @review], data: { controller: "form-submit" }) do |f| %>
-              <%= f.input :rating, collection: (1..5).to_a, label: "Califica tu experiencia", input_html: {data: {controller: "star-rating", action: "click->form-submit#submit"}} %>
+              <%= f.input :rating, collection: (1..5).to_a, label: false, input_html: {data: {controller: "star-rating", action: "click->form-submit#submit"}} %>
               <%= f.input :comment, :input_html => {:style=> 'width: 70%;'}, label: false %>
               <%= f.submit "Submit", class: "btn btn-ghost"%>
             <% end %>
           <%# </div> %>
           <% else %>
             <%= simple_form_for([@plan, @review], data: { controller: "form-submit" }) do |f| %>
-                <%= f.input :rating, collection: (1..5).to_a, label: "Califica tu experiencia", input_html: {data: {controller: "star-rating", action: "click->form-submit#submit"}} %>
+                <%= f.input :rating, collection: (1..5).to_a, input_html: {data: {controller: "star-rating", action: "click->form-submit#submit"}} %>
                 <%= f.input :comment, :input_html => {:style=> 'width: 70%;'}, label: false %>
                 <%#= f.submit "Submit", class: "btn btn-ghost"%>
               <% end %>
@@ -161,7 +168,7 @@
       <div class = "d-flex justify-content-between mb-3">
         <%= cl_image_tag review.user.photo.key, class:"avatar-medium-plan"%>
         <div class = "w-100">
-          <div class= "d-flex justify-content-between">
+          <div class= "d-flex justify-content-between font">
           <% if current_user %>
           <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
           <% end %>
