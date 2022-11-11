@@ -23,7 +23,7 @@ photo_1 = URI.open("https://images.unsplash.com/photo-1570295999919-56ceb5ecca61
 user_1.photo.attach(io: photo_1, filename:"photo_daniel.png", content_type: "image/png")
 user_1.save
 
-user_2 = User.new(first_name: "Sebastián", last_name: "Aristizábal", email: "sebastian@gmail.com", password: "123456"  )
+user_2 = User.new(first_name: "Manuel", last_name: "Osorio Marín", email: "sebastian@gmail.com", password: "123456"  )
 photo_2= URI.open("https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80")
 user_2.photo.attach(io: photo_2, filename:"photo_sabastian.png", content_type: "image/png")
 user_2.save
