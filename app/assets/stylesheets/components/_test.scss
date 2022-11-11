@@ -7,14 +7,19 @@
 
 .avatar-big-plan {
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   position: absolute;
   margin-top: -80px;
   margin-left: 40px;
   border-style: solid;
   border-width: 10px;
   border-color: white;
+}
+
+.name-user {
+  margin-top: 80px;
+  margin-left: 25px;
 }
 
 .container-header h5{
@@ -25,11 +30,12 @@
 
 .item3 i {
   color: #47DFD3;
+  align-items: center;
 }
 
 .container-header h2{
 font-size: 50px;
-background: linear-gradient(to right, #47DFD3 23%, rgb(5, 5, 5) 40%, rgb(5, 5, 5) 50%, #47DFD3 20%);
+background:rgb(5, 5, 5);
 display: inline-block;
 // background: linear-gradient(to top, rgba(71, 223, 211, 1)50%, rgba(5, 5, 5, 1) 50%);
 background-clip: text;
@@ -72,12 +78,18 @@ padding-left: 20px;
 .card-plan{
   border-radius: 10px;
   text-align: justify;
+  font-family: 'Outfit', sans-serif;
 }
 .card-plan > p {
   text-align: justify;
   font-size: large;
   margin: 0px;
   color: rgb(8, 8, 8);
+}
+
+
+.font {
+  font-family: 'Outfit', sans-serif;
 }
 
 .banner-plan {
@@ -156,7 +168,7 @@ padding-left: 20px;
   .container-body {
     height: auto;
     background-color: white;
-    padding: 20px 20px 40px 20px;
+    padding: 0px 20px 40px 20px;
     display: grid;
     grid-template-rows: 1fr 445px 0.3fr auto;
     grid-template-columns: 0.55fr 0.45fr;
@@ -202,6 +214,7 @@ padding-left: 20px;
 
   .item2 {
     height: 300px;
+    font-family: Poppins;
   }
 
   .container-body {

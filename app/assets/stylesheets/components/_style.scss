@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@700');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cantora+One&family=Open+Sans&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;400&display=swap');
 
 @import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
 // @import url('components/cards.scss');
@@ -9,12 +9,12 @@
 
 body {
   margin: 0;
-  font-family: 'GT Walsheim Pro';
+  font-family: 'Outfit', sans-serif;
   position: relative;
 }
 
 h1, h2, h3, h4 {
-  font-family: 'GT Walsheim Pro';
+  font-family: 'Outfit', sans-serif;
   color: black;
 }
 .tipo-letra{
@@ -30,7 +30,7 @@ i{
 
 a {
   text-decoration: none;
-  font-family: 'GT Walsheim Pro';
+  font-family: 'Outfit', sans-serif;
 
 }
 .text-justify{
@@ -40,13 +40,13 @@ a {
   color: rgb(255, 255, 255);
 }
 p{
-  font-family: 'GT Walsheim Pro';
+  font-family: 'Outfit', sans-serif;
   color: rgb(0, 0, 0);
 
 }
 
 .letra_baner{
-  font-family: 'GT Walsheim Pro';
+  font-family: 'Outfit', sans-serif;
   color: rgb(0, 0, 0);
 }
 
