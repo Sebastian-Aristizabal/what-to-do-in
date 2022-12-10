@@ -221,7 +221,7 @@ plan_29.photos.attach(io: photo_44, filename: "rancherito2.png", content_type: "
 plan_29.save!
 
 plan_30 = Plan.new(title: "Los Perrines del Poblado", video_url: "", details: "Los famosos perros calientes de la carpa roja. Amamos los 🌭,🍔 y 🥓.", start_date: Date.today, end_date: 5.days.from_now, start_hour:"2022-10-23 09:00:00", end_hour:"2022-10-23 18:00:00", address:"Parque El Poblado, Medellin", link_web:"", instagram_link:"https://www.instagram.com/losperrinesdepoblado/", facebook_link:"", free: false, category_id: category_3.id, user_id: user_3.id)
-photo_45 = URI.open("https://scontent.feoh8-1.fna.fbcdn.net/v/t1.6435-9/104949918_3115730658541621_2795471650348290155_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeEm8capIwxjIvjwsFgky84PSpa1zp9PIvNKlrXOn08i8zxmQC30QDOKYScJw0fllgjNN1hEPtAKvBK3vQ8_am4S&_nc_ohc=kSAimmG-1fgAX-F-wdw&_nc_ht=scontent.feoh8-1.fna&oh=00_AfBuDhdZNu6BpXXjPaHGVcEXJoi5EaFIhVag-w9nn4wIdQ&oe=6390E18C")
+photo_45 = URI.open("https://images.unsplash.com/photo-1536521642388-441263f88a61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")
 plan_30.photos.attach(io: photo_45, filename: "perrines.png", content_type: "image/png")
 photo_46 = URI.open("https://fastly.4sqi.net/img/general/width960/25490215_0E7BJrsi4QboI6ZwwzsZDBqQRx0_iQqMi6Gpje6CC8M.jpg")
 plan_30.photos.attach(io: photo_46, filename: "perrines2.png", content_type: "image/png")
